@@ -17,7 +17,7 @@ img {
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: #000;
 }
 
 ul, ol {
@@ -25,5 +25,151 @@ ul, ol {
 }
 
 body {
-    background-color: #E2DDCE;
+    margin: 0;
+    background-color: #000000;
+}
+
+/* header */
+  
+.header {
+    background-color: transparent; /* Gør headeren gennemsigtig */
+    position: fixed; /* Fikser headeren øverst på siden */
+    width: 100%; /* Giver headeren fuld bredde */
+    z-index: 3; /* Sørger for at headeren ligger over andet indhold */
+}
+
+/* header liste */
+
+.header ul {
+    margin: 0; /* Fjerner margin omkring ul */
+    padding: 0; /* Fjerner padding omkring ul */
+    list-style: none; /* Fjerner punkttegn foran listeelementer */
+    overflow: hidden; /* Skjuler eventuel overløb */
+    background-color: transparent; /* Gør baggrund gennemsigtig */
+}
+  
+/* header liste tekst */
+
+.header li a {
+    color: #ffffff; /* Sætter tekstfarven til hvid */
+    padding: 20px; /* Justerer padding for at give plads */
+    display: block; /* Sørger for, at links fylder hele bredden */
+    text-align: center; /* Centrerer teksten i boksen */
+}
+
+/* header logo */
+
+.header .logo {
+    display: block; /* Blok element for bedre justering */
+    float: left; /* Placerer logo til venstre */
+    padding: 10px 20px; /* Tilføjer padding omkring logoet */
+    text-decoration: none; /* Fjerner understregning */
+}
+  
+/* menu */
+  
+.header .menu {
+    clear: both;
+    max-height: 0;
+    overflow: hidden; /* Skjuler indholdet, når menuen er lukket */
+    transition: max-height 0.0s ease-out; /* Glidende åbning/lukning */
+    background-color: #E2DDCE; /* Tilføjer baggrundsfarve til boksen */
+    width: 100%; /* Fylder hele bredden */
+    
+}
+  
+/* menu ikon */
+  
+.header .menu-icon {
+    cursor: pointer; /* Ændrer musemarkør til hånd */
+    padding: 28px 20px; /* Tilføjer plads rundt om menu-ikonet */
+    position: relative; /* Gør det muligt at placere underliggende elementer relativt */
+    user-select: none; /* Forhindrer markering af ikonet */
+    float: right; /* Placerer menu-ikonet til højre */
+}
+
+/* menu ikon */
+
+.header .menu-icon .navicon {
+    background: #ffffff; /* Hvid linje i burgerikonet */
+    display: block; /* Gør det til blok element */
+    height: 2px; /* Definerer tykkelsen på linjen */
+    position: relative; /* Bruges til at placere før og efter elementerne */
+    transition: .2s ease-out; /* Blød overgang ved ændringer */
+    width: 18px; /* Definerer bredden af linjen */
+}
+
+/* menu ikon */
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+    background: #fff; /* Hvide linjer i burgerikonet */
+    content: ''; /* Indsætter ekstra linjer */
+    display: block; /* Viser linjer som blokke */
+    height: 100%; /* Matcher højden på hovedlinjen */
+    position: absolute; /* Placerer linjerne i forhold til navicon */
+    transition: all .2s ease-out; /* Blød overgang ved ændringer */
+    width: 100%; /* Matcher bredden af hovedlinjen */
+}
+  
+/* menu ikon transition - øvre linje */
+
+.header .menu-icon .navicon:before {
+    top: 5px; /* Placerer øverste linje 5px over midtlinjen */
+}
+  
+/* menu ikon transition - nedre linje */
+
+.header .menu-icon .navicon:after {
+    top: -5px; /* Placerer nederste linje 5px under midtlinjen */
+}
+  
+/* menu knap */
+
+.header .menu-btn {
+    display: none; /* Skjuler den faktiske menu checkbox */
+}
+  
+.header .menu-btn:checked ~ .menu {
+    max-height: 240px; /* Åbner menuen ved klik */
+}
+  
+.header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent; /* Skjuler midtlinjen ved klik */
+}
+  
+/* menu knap drej ved klik */
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg); /* Roterer øverste linje til X-ikon */
+}
+  
+/* menu knap drej ved klik */
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg); /* Roterer nederste linje til X-ikon */
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0; /* Flytter de roterede linjer sammen til X */
+}
+  
+/* responsiv design - 768px og derover */
+  
+@media (min-width: 768px) {
+    .header li {
+        float: left; /* Placerer menu links i en række */
+    }
+    .header li a {
+        padding: 20px 30px; /* Øger padding for større skærme */
+    }
+    .header .menu {
+        clear: none; /* Fjerner overlapning */
+        float: right; /* Placerer menuen til højre */
+        max-height: none; /* Fjerner højdebegrænsningen */
+    }
+    .header .menu-icon {
+        display: none; /* Skjuler burgerikonet på større skærme */
+    }
 }
