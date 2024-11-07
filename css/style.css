@@ -29,6 +29,26 @@ body {
     background-color: #000000;
 }
 
+.image-container #logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    width: 50px;
+}
+
+@media (min-width: 768px) {
+    #front-page-image img {
+        width: auto;
+        height: auto;
+    }
+
+   
+#logo {
+        content: url(/img/LogostorHvid.webp);
+        width: 400px;
+    }
+}
 /* header */
   
 .header {
