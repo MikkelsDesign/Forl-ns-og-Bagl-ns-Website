@@ -124,7 +124,8 @@ body {
         width: 200px;
         top: 25px;
         left: 25px;
-        
+    }
+
     #logo {
         content: url(/img/LogostorHvid.webp);  /* Ændrer logoet til et større billede */
         width: 400px;  /* Øger logoets størrelse på større skærme */
@@ -326,5 +327,4 @@ footer a:hover {
 
 .social-media .social-icon:hover {
     opacity: 0.7;  /* Hover-effekt for gennemsigtighed */
-}
 }
