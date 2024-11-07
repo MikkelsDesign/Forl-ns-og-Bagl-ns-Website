@@ -1,34 +1,35 @@
 /* CSS Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;  /* Fjerner margin på alle elementer */
+    padding: 0;  /* Fjerner padding på alle elementer */
+    box-sizing: border-box;  /* Indstiller box-sizing til border-box for at inkludere padding og border i elementets samlede størrelse */
 }
 
 html, body {
-    height: 100%;
-    font-family: Arial, sans-serif;
+    height: 100%;  /* Sørg for, at både html og body fylder hele skærmens højde */
+    font-family: Arial, sans-serif;  /* Sætter standard skrifttype til Arial */
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+    max-width: 100%;  /* Sørger for at billeder ikke overskrider deres container */
+    height: auto;  /* Bevarer billedets højde/bredde-forhold */
 }
 
 a {
-    text-decoration: none;
-    color: #000;
+    text-decoration: none;  /* Fjerner underlinje fra links */
+    color: #000;  /* Sætter linkfarve til sort */
 }
 
 ul, ol {
-    list-style: none;
+    list-style: none;  /* Fjerner punkttegn fra ul og ol */
 }
 
 body {
-    margin: 0;
-    background-color: #000000;
+    margin: 0;  /* Fjerner margin på body */
+    background-color: #000000;  /* Sætter baggrundsfarven til sort */
 }
 
+<<<<<<< Updated upstream
 .image-container #forbillede
 {
     position: relative;
@@ -38,14 +39,18 @@ body {
 }
 
 /* Hvidt logo øverst venstr hjørne */
+=======
+/* Logo placering */
+>>>>>>> Stashed changes
 .image-container #logo {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 10;
-    width: 50px;
+    position: absolute;  /* Positionerer logoet absolut i forhold til containeren */
+    top: 10px;  /* Placerer logoet 10px fra toppen */
+    left: 10px;  /* Placerer logoet 10px fra venstre */
+    z-index: 10;  /* Giver logoet et højere z-index for at sikre, at det er over andre elementer */
+    width: 50px;  /* Sætter logoets bredde til 50px */
 }
 
+<<<<<<< Updated upstream
 .overlay {
     position: absolute;
     top: 50%;
@@ -106,17 +111,26 @@ body {
 
 
 /* Forsidebillede og logo media queries */
+=======
+/* Responsiv design for skærme over 768px */
+>>>>>>> Stashed changes
 @media (min-width: 768px) {
     #front-page-image img {
-        width: auto;
-        height: auto;
+        width: auto;  /* Lader billedet skalere automatisk på større skærme */
+        height: auto;  /* Bevarer billedets højde/bredde-forhold */
     }
 
+<<<<<<< Updated upstream
     .image-container #logo {
         content: url(/img/LogostorHvid.webp);
         width: 200px;
         top: 25px;
         left: 25px;
+=======
+    #logo {
+        content: url(/img/LogostorHvid.webp);  /* Ændrer logoet til et større billede */
+        width: 400px;  /* Øger logoets størrelse på større skærme */
+>>>>>>> Stashed changes
     }
 
     .buttons {
@@ -127,143 +141,195 @@ body {
 
 }
 
-/* header */
+/* Header */
 .header {
-    background-color: transparent; /* Gør headeren helt gennemsigtig */
-    position: fixed;
-    width: 100%;
-    z-index: 2; /* Sørg for, at headeren ligger over menuen */
-    transition: background-color 0.3s ease;
+    background-color: transparent;  /* Gør headeren helt gennemsigtig */
+    position: absolute;  /* Gør headeren ikke følger med */
+    width: 100%;  /* Gør headeren lige så bred som skærmen */
+    z-index: 2;  /* Giver headeren et z-index for at sikre, at den ligger over menuen */
+    transition: background-color 0.3s ease;  /* Gør baggrundsfarveændring glidende */
 }
 
-/* header liste */
+/* Header liste (menupunkter) */
 .header ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    overflow: hidden;
-    background-color: transparent;
+    margin: 0;  /* Fjerner margin på listen */
+    padding: 0;  /* Fjerner padding på listen */
+    list-style: none;  /* Fjerner punkttegn på listen */
+    overflow: hidden;  /* Skjuler indhold, der går udenfor containeren */
+    background-color: transparent;  /* Gør listen gennemsigtig */
 }
 
-/* header liste tekst */
+/* Header liste tekst */
 .header li a {
+<<<<<<< Updated upstream
     color: #ffffff;
     padding: 20px;
     display: block;
     text-align: center;
     font-size: 20px;
+=======
+    color: #ffffff;  /* Gør tekstfarven hvid */
+    padding: 20px;  /* Tilføjer 20px padding rundt om linket */
+    display: block;  /* Gør linkene til blokke så de fylder hele rækken */
+    text-align: center;  /* Centrerer tekst i linket */
+>>>>>>> Stashed changes
 }
 
-/* menu */
+/* Menu (dropdown) */
 .header .menu {
-    position: absolute;
-    top: 0; /* Start ved toppen af skærmen */
-    left: 0;
-    right: 0;
-    background-color: #E2DDCE; /* Baggrundsfarve til dropdown-menuen */
-    padding: 10px 0;
-    max-height: 0;
-    overflow: hidden; /* Skjul indhold indtil menuen åbnes */
-    transition: max-height 0.3s ease-out;
-    z-index: 1; /* Sørg for, at menuen ligger bag logo og burgerikon */
+    position: absolute;  /* Positionerer menuen absolut i forhold til containeren */
+    top: 0;  /* Starter menuen fra toppen af skærmen */
+    left: 0;  /* Starter menuen fra venstre */
+    right: 0;  /* Får menuen til at strække sig over hele skærmen */
+    background-color: #E2DDCE;  /* Sætter baggrundsfarve på menuen */
+    padding: 10px 0;  /* Tilføjer 10px padding på top og bund */
+    max-height: 0;  /* Sætter start-højden på menuen til 0, så den er skjult */
+    overflow: hidden;  /* Skjuler menuindholdet, når højden er 0 */
+    transition: max-height 0.3s ease-out;  /* Glidende overgang for at åbne menuen */
+    z-index: 1;  /* Sørger for at menuen ligger bag logo og burgerikon */
 }
 
-/* menu ikon */
+/* Burger-ikon */
 .header .menu-icon {
-    cursor: pointer;
-    padding: 28px 20px;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    z-index: 3; /* Sørg for, at burgerikonet er over menuen */
-    user-select: none;
+    cursor: pointer;  /* Gør ikonene klikbare */
+    padding: 28px 20px;  /* Tilføjer padding omkring burgerikonet */
+    position: absolute;  /* Positionerer burgerikonet absolut */
+    top: 10px;  /* Placerer burgerikonet 10px fra toppen */
+    right: 20px;  /* Placerer burgerikonet 20px fra højre */
+    z-index: 3;  /* Sørger for at burgerikonet ligger over menuen */
+    user-select: none;  /* Forhindrer at ikonet bliver markeret */
 }
 
-/* menu ikon styling */
+/* Burger-ikon linjer */
 .header .menu-icon .navicon {
-    background: #ffffff;
-    display: block;
-    height: 2px;
-    position: relative;
-    transition: .2s ease-out;
-    width: 18px;
+    background: #ffffff;  /* Sætter baggrundsfarve på linjerne til hvid */
+    display: block;  /* Gør linjerne til blokke */
+    height: 2px;  /* Sætter højden på linjerne */
+    position: relative;  /* Positionerer linjerne relativt til deres container */
+    transition: .2s ease-out;  /* Glidende overgang ved ændring af stil */
+    width: 18px;  /* Sætter bredden på linjerne */
 }
 
+/* Burger-ikonens før og efter pseudo-elementer */
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
-    background: #fff;
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    transition: all .2s ease-out;
-    width: 100%;
+    background: #fff;  /* Gør før og efter linjerne hvide */
+    content: '';  /* Fjerner tekstindhold */
+    display: block;  /* Gør dem til blokke */
+    height: 100%;  /* Giver dem samme højde som linjen */
+    position: absolute;  /* Positionerer dem absolut */
+    transition: all .2s ease-out;  /* Glidende overgang */
+    width: 100%;  /* Gør dem lige så brede som linjen */
 }
 
 .header .menu-icon .navicon:before {
-    top: 5px;
+    top: 5px;  /* Placerer den første linje 5px fra toppen */
 }
 
 .header .menu-icon .navicon:after {
-    top: -5px;
+    top: -5px;  /* Placerer den anden linje 5px fra bunden */
 }
 
-/* menu knap */
+/* Menu-knap (checkbox) */
 .header .menu-btn {
-    display: none;
+    display: none;  /* Skjuler menu-knappen, da den kun bruges som skjult input */
 }
 
+/* Når menu-knappen er aktiveret */
 .header .menu-btn:checked ~ .menu {
-    max-height: 240px; /* Åbn menuen ved klik */
+    max-height: 240px;  /* Åbner menuen ved at sætte max-højden til 240px */
 }
 
+/* Når menu-knappen er aktiveret, skjules burgerikonet */
 .header .menu-btn:checked ~ .menu-icon .navicon {
-    background: transparent;
+    background: transparent;  /* Gør burgerikonet gennemsigtigt */
+    
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon:before {
-    transform: rotate(-45deg);
+    transform: rotate(-45deg);  /* Roterer før linjen -45 grader */
+    top: 0;  /* Justerer placeringen af linjen, så den er på samme sted som den anden linje */
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon:after {
-    transform: rotate(45deg);
+    transform: rotate(45deg);  /* Roterer efter linjen 45 grader */
+    top: 0;  /* Justerer placeringen af linjen, så den er på samme sted som den første linje */
 }
 
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-    top: 0;
-}
-
-/* responsiv design - under 768px */
+/* Responsiv design under 768px */
 @media (max-width: 767px) {
     .header .menu {
-        display: none; /* Skjuler menuen helt under 768px */
+        display: none;  /* Skjuler menuen helt under 768px */
     }
 
     .header .menu-btn:checked ~ .menu {
-        display: block; /* Vis menuen, når burgerikonet er klikket */
-        max-height: 240px;
+        display: block;  /* Viser menuen, når burgerikonet er klikket */
+        max-height: 240px;  /* Sætter højden på menuen */
     }
 }
 
-/* responsiv design - 768px og derover */
+/* Responsiv design over 768px */
 @media (min-width: 768px) {
     .header li {
-        float: right; /* Placer menupunkter til højre */
+        float: right;  /* Placerer menupunkterne til højre */
     }
+
     .header li a {
-        padding: 20px 30px;
-        text-align: right; /* Justér tekst til højre */
+        padding: 20px 30px;  /* Øger padding på menupunkterne */
+        text-align: right;  /* Justerer tekst til højre */
     }
+
     .header .menu {
-        clear: none;
-        float: right;
-        max-height: none;
-        background-color: transparent; /* Transparent på større skærme */
-        padding: 0;
-        border-radius: 0;
+        clear: none;  /* Sikrer at menuen ikke flyder */
+        float: right;  /* Placerer menuen til højre */
+        max-height: none;  /* Fjerner max-højde på større skærme */
+        background-color: transparent;  /* Gør menuen gennemsigtig */
+        padding: 0;  /* Fjerner padding */
+        border-radius: 0;  /* Fjerner border-radius */
     }
+
     .header .menu-icon {
-        display: none; /* Skjul burgerikonet på større skærme */
+        display: none;  /* Skjuler burgerikonet på større skærme */
     }
+}
+
+/* Footer */
+footer {
+    background-color: #BAAC83;  /* Ændret baggrundsfarve til #BAAC83 */
+    padding: 20px;  /* Tilføjer padding omkring footer-indholdet */
+    text-align: center;  /* Centrerer teksten */
+    
+}
+
+/* Footer tekst */
+footer p {
+    margin: 10px 0;  /* Giver lidt plads mellem linjerne */
+}
+
+/* Footer links */
+footer a {
+    color: #75242C;  /* Sætter linkfarven til #75242C */
+    font-weight: bold;  /* Gør links fed */
+    text-decoration: none;  /* Fjerner understrygning */
+}
+
+footer a:hover {
+    text-decoration: underline;  /* Understreger links ved hover */
+}
+
+/* Sociale medie ikoner */
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media .social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 40px;  /* Størrelsen af ikonerne */
+    color: #75242C;   /* Farven på både Instagram og Facebook logoerne */
+    transition: opacity 0.3s ease;
+}
+
+.social-media .social-icon:hover {
+    opacity: 0.7;  /* Hover-effekt for gennemsigtighed */
 }
