@@ -35,6 +35,7 @@ body {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    object-fit: cover;
 }
 
 /* Hvidt logo øverst venstr hjørne */
@@ -61,12 +62,16 @@ body {
     font-size: 2rem;
     margin-bottom: 10px;
     color: #EFFFFF;
+    white-space: nowrap;
 }
 
-.main-logo {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 5px;
+.image-container #mainlogo {
+    max-width: 550px; /* Set a maximum width */
+    min-width: 225px; /* Set a minimum width */
+    width: 40vw; /* Make it responsive using viewport width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the logo horizontally */
+    display: block; /* Ensure the image centers properly */
 }
 
 .subtext {
