@@ -94,154 +94,148 @@ body {
         height: auto;
     }
 
- /* hvidt logo bliver til stort logo på større skærme */
-    .image-container   
-#logo {
+    #logo {
         content: url(/img/LogostorHvid.webp);
         width: 150px;
     }
 }
+
 /* header */
-  
 .header {
-    background-color: transparent; /* Gør headeren gennemsigtig */
-    position: fixed; /* Fikser headeren øverst på siden */
-    width: 100%; /* Giver headeren fuld bredde */
-    z-index: 3; /* Sørger for at headeren ligger over andet indhold */
+    background-color: transparent; /* Gør headeren helt gennemsigtig */
+    position: fixed;
+    width: 100%;
+    z-index: 2; /* Sørg for, at headeren ligger over menuen */
+    transition: background-color 0.3s ease;
 }
 
 /* header liste */
-
 .header ul {
-    margin: 0; /* Fjerner margin omkring ul */
-    padding: 0; /* Fjerner padding omkring ul */
-    list-style: none; /* Fjerner punkttegn foran listeelementer */
-    overflow: hidden; /* Skjuler eventuel overløb */
-    background-color: transparent; /* Gør baggrund gennemsigtig */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: transparent;
 }
-  
+
 /* header liste tekst */
-
 .header li a {
-    color: #ffffff; /* Sætter tekstfarven til hvid */
-    padding: 20px; /* Justerer padding for at give plads */
-    display: block; /* Sørger for, at links fylder hele bredden */
-    text-align: center; /* Centrerer teksten i boksen */
+    color: #ffffff;
+    padding: 20px;
+    display: block;
+    text-align: center;
 }
 
-/* header logo */
-
-.header .logo {
-    display: block; /* Blok element for bedre justering */
-    float: left; /* Placerer logo til venstre */
-    padding: 10px 20px; /* Tilføjer padding omkring logoet */
-    text-decoration: none; /* Fjerner understregning */
-}
-  
 /* menu */
-  
 .header .menu {
-    clear: both;
+    position: absolute;
+    top: 0; /* Start ved toppen af skærmen */
+    left: 0;
+    right: 0;
+    background-color: #E2DDCE; /* Baggrundsfarve til dropdown-menuen */
+    padding: 10px 0;
     max-height: 0;
-    overflow: hidden; /* Skjuler indholdet, når menuen er lukket */
-    transition: max-height 0.0s ease-out; /* Glidende åbning/lukning */
-    background-color: #E2DDCE; /* Tilføjer baggrundsfarve til boksen */
-    width: 100%; /* Fylder hele bredden */
-    
+    overflow: hidden; /* Skjul indhold indtil menuen åbnes */
+    transition: max-height 0.3s ease-out;
+    z-index: 1; /* Sørg for, at menuen ligger bag logo og burgerikon */
 }
-  
+
 /* menu ikon */
-  
 .header .menu-icon {
-    cursor: pointer; /* Ændrer musemarkør til hånd */
-    padding: 28px 20px; /* Tilføjer plads rundt om menu-ikonet */
-    position: relative; /* Gør det muligt at placere underliggende elementer relativt */
-    user-select: none; /* Forhindrer markering af ikonet */
-    float: right; /* Placerer menu-ikonet til højre */
+    cursor: pointer;
+    padding: 28px 20px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 3; /* Sørg for, at burgerikonet er over menuen */
+    user-select: none;
 }
 
-/* menu ikon */
-
+/* menu ikon styling */
 .header .menu-icon .navicon {
-    background: #ffffff; /* Hvid linje i burgerikonet */
-    display: block; /* Gør det til blok element */
-    height: 2px; /* Definerer tykkelsen på linjen */
-    position: relative; /* Bruges til at placere før og efter elementerne */
-    transition: .2s ease-out; /* Blød overgang ved ændringer */
-    width: 18px; /* Definerer bredden af linjen */
+    background: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: .2s ease-out;
+    width: 18px;
 }
-
-/* menu ikon */
 
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
-    background: #fff; /* Hvide linjer i burgerikonet */
-    content: ''; /* Indsætter ekstra linjer */
-    display: block; /* Viser linjer som blokke */
-    height: 100%; /* Matcher højden på hovedlinjen */
-    position: absolute; /* Placerer linjerne i forhold til navicon */
-    transition: all .2s ease-out; /* Blød overgang ved ændringer */
-    width: 100%; /* Matcher bredden af hovedlinjen */
+    background: #fff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
 }
-  
-/* menu ikon transition - øvre linje */
 
 .header .menu-icon .navicon:before {
-    top: 5px; /* Placerer øverste linje 5px over midtlinjen */
+    top: 5px;
 }
-  
-/* menu ikon transition - nedre linje */
 
 .header .menu-icon .navicon:after {
-    top: -5px; /* Placerer nederste linje 5px under midtlinjen */
+    top: -5px;
 }
-  
-/* menu knap */
 
+/* menu knap */
 .header .menu-btn {
-    display: none; /* Skjuler den faktiske menu checkbox */
+    display: none;
 }
-  
+
 .header .menu-btn:checked ~ .menu {
-    max-height: 240px; /* Åbner menuen ved klik */
+    max-height: 240px; /* Åbn menuen ved klik */
 }
-  
+
 .header .menu-btn:checked ~ .menu-icon .navicon {
-    background: transparent; /* Skjuler midtlinjen ved klik */
+    background: transparent;
 }
-  
-/* menu knap drej ved klik */
 
 .header .menu-btn:checked ~ .menu-icon .navicon:before {
-    transform: rotate(-45deg); /* Roterer øverste linje til X-ikon */
+    transform: rotate(-45deg);
 }
-  
-/* menu knap drej ved klik */
 
 .header .menu-btn:checked ~ .menu-icon .navicon:after {
-    transform: rotate(45deg); /* Roterer nederste linje til X-ikon */
+    transform: rotate(45deg);
 }
 
 .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
 .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-    top: 0; /* Flytter de roterede linjer sammen til X */
+    top: 0;
 }
-  
+
+/* responsiv design - under 768px */
+@media (max-width: 767px) {
+    .header .menu {
+        display: none; /* Skjuler menuen helt under 768px */
+    }
+
+    .header .menu-btn:checked ~ .menu {
+        display: block; /* Vis menuen, når burgerikonet er klikket */
+        max-height: 240px;
+    }
+}
+
 /* responsiv design - 768px og derover */
-  
 @media (min-width: 768px) {
     .header li {
-        float: left; /* Placerer menu links i en række */
+        float: right; /* Placer menupunkter til højre */
     }
     .header li a {
-        padding: 20px 30px; /* Øger padding for større skærme */
+        padding: 20px 30px;
+        text-align: right; /* Justér tekst til højre */
     }
     .header .menu {
-        clear: none; /* Fjerner overlapning */
-        float: right; /* Placerer menuen til højre */
-        max-height: none; /* Fjerner højdebegrænsningen */
+        clear: none;
+        float: right;
+        max-height: none;
+        background-color: transparent; /* Transparent på større skærme */
+        padding: 0;
+        border-radius: 0;
     }
     .header .menu-icon {
-        display: none; /* Skjuler burgerikonet på større skærme */
+        display: none; /* Skjul burgerikonet på større skærme */
     }
 }
