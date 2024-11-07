@@ -67,7 +67,7 @@ body {
 
 .image-container #mainlogo {
     max-width: 550px; /* Set a maximum width */
-    min-width: 225px; /* Set a minimum width */
+    min-width: 275px; /* Set a minimum width */
     width: 40vw; /* Make it responsive using viewport width */
     height: auto; /* Maintain aspect ratio */
     margin: 0 auto; /* Center the logo horizontally */
@@ -124,6 +124,7 @@ body {
         width: 200px;
         top: 25px;
         left: 25px;
+        
     #logo {
         content: url(/img/LogostorHvid.webp);  /* Ændrer logoet til et større billede */
         width: 400px;  /* Øger logoets størrelse på større skærme */
