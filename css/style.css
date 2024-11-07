@@ -29,7 +29,6 @@ body {
     background-color: #000000;  /* Sætter baggrundsfarven til sort */
 }
 
-<<<<<<< Updated upstream
 .image-container #forbillede
 {
     position: relative;
@@ -39,9 +38,7 @@ body {
 }
 
 /* Hvidt logo øverst venstr hjørne */
-=======
 /* Logo placering */
->>>>>>> Stashed changes
 .image-container #logo {
     position: absolute;  /* Positionerer logoet absolut i forhold til containeren */
     top: 10px;  /* Placerer logoet 10px fra toppen */
@@ -50,7 +47,6 @@ body {
     width: 50px;  /* Sætter logoets bredde til 50px */
 }
 
-<<<<<<< Updated upstream
 .overlay {
     position: absolute;
     top: 50%;
@@ -111,26 +107,21 @@ body {
 
 
 /* Forsidebillede og logo media queries */
-=======
 /* Responsiv design for skærme over 768px */
->>>>>>> Stashed changes
 @media (min-width: 768px) {
     #front-page-image img {
         width: auto;  /* Lader billedet skalere automatisk på større skærme */
         height: auto;  /* Bevarer billedets højde/bredde-forhold */
     }
 
-<<<<<<< Updated upstream
     .image-container #logo {
         content: url(/img/LogostorHvid.webp);
         width: 200px;
         top: 25px;
         left: 25px;
-=======
     #logo {
         content: url(/img/LogostorHvid.webp);  /* Ændrer logoet til et større billede */
         width: 400px;  /* Øger logoets størrelse på større skærme */
->>>>>>> Stashed changes
     }
 
     .buttons {
@@ -161,18 +152,15 @@ body {
 
 /* Header liste tekst */
 .header li a {
-<<<<<<< Updated upstream
     color: #ffffff;
     padding: 20px;
     display: block;
     text-align: center;
     font-size: 20px;
-=======
     color: #ffffff;  /* Gør tekstfarven hvid */
     padding: 20px;  /* Tilføjer 20px padding rundt om linket */
     display: block;  /* Gør linkene til blokke så de fylder hele rækken */
     text-align: center;  /* Centrerer tekst i linket */
->>>>>>> Stashed changes
 }
 
 /* Menu (dropdown) */
@@ -332,4 +320,5 @@ footer a:hover {
 
 .social-media .social-icon:hover {
     opacity: 0.7;  /* Hover-effekt for gennemsigtighed */
+}
 }
