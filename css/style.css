@@ -80,10 +80,13 @@ body {
     color: #EFFFFF;
 }
 
+
+/* De to røde knapper */
 .buttons {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: center;
 }
 
 .button {
@@ -97,6 +100,7 @@ body {
     transition: background-color 0.3s;
     transition: transform 0.3s;
     width: 12.5em;
+    align-items: center; 
 }
 
 .button:hover {
