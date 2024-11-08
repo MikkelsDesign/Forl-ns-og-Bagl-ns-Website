@@ -693,6 +693,7 @@ footer a:hover {
     margin-bottom: 20px;
     text-align: center;
     font-family: Oswald;
+    letter-spacing: 2px;
 }
 
 .form-label {
@@ -737,25 +738,48 @@ footer a:hover {
 }
 
 .form-next-btn, .form-prev-btn, .form-confirm-btn {
-    background-color: #007BFF;
-    color: white;
+    background-color: #E2DDCE;
+    color: rgb(0, 0, 0);
     border: none;
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
+    font-family: Lato;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .form-prev-btn {
-    background-color: #6c757d;
+    background-color: #E2DDCE;
+}
+
+.form-next-btn {
+    background-color: #E2DDCE;
+    float: right;
+    text-decoration: black;
 }
 
 .form-confirm-btn {
-    background-color: #28a745;
+    background-color: #75242C;
     cursor: not-allowed;
+    color: white
 }
 
 .form-confirm-btn.enabled {
     cursor: pointer;
-    background-color: #28a745;
+    background-color: #75242C;
+}
+
+.form-next-btn:hover, .form-prev-btn:hover, .form-confirm-btn.enabled:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.form-next-btn:hover, .form-prev-btn:hover {
+    background-color: #c5c1b3;
+}
+
+.form-confirm-btn.enabled:hover
+{
+    background-color: #A4414B;
 }
