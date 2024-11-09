@@ -783,3 +783,24 @@ footer a:hover {
 {
     background-color: #A4414B;
 }
+
+.form-page {
+    display: none;
+    opacity: 0;
+    transform: scale(0.9); /* Shrink more to make the transition noticeable */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Slower transition (600ms) */
+}
+
+.form-page.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1); /* Return to normal size */
+}
+
+.form-page.exiting {
+    opacity: 0;
+    transform: scale(1.1); /* Grow more before fading out */
+}
+
+
+

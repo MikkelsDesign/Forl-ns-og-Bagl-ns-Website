@@ -3,27 +3,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.querySelector('.form-prev-btn');
     const confirmBtn = document.querySelector('.form-confirm-btn');
     const formPages = document.querySelectorAll('.form-page');
-    const checkboxes = document.querySelectorAll('.form-checkbox-container input');
     const guestInfo = document.getElementById('guest-info');
     const dateInfo = document.getElementById('date-info');
     const timeInfo = document.getElementById('time-info');
     const guestsSelect = document.getElementById('form-guests');
     const dateInput = document.getElementById('form-date');
     const timeSelect = document.getElementById('form-time');
+    const checkboxes = document.querySelectorAll('.form-checkbox-container input');
     let currentPage = 0;
 
-    // Function to switch form pages
+    // Function to switch form pages with fade and scale animation
     function goToPage(pageIndex) {
-        formPages[currentPage].classList.remove('active');
-        currentPage = pageIndex;
-        formPages[currentPage].classList.add('active');
+        if (pageIndex < 0 || pageIndex >= formPages.length) return; // Ensure valid page index
+
+        // Add 'exiting' class to the current page for the transition effect
+        formPages[currentPage].classList.add('exiting');
+        formPages[currentPage].addEventListener('transitionend', function handleTransition() {
+            formPages[currentPage].classList.remove('active', 'exiting');
+            formPages[currentPage].removeEventListener('transitionend', handleTransition);
+
+            currentPage = pageIndex; // Update current page index
+            formPages[currentPage].classList.add('active'); // Make the new page active
+
+            // If moving to the second page, update guest, date, and time info
+            if (currentPage === 1) {
+                guestInfo.textContent = `Antal Gæster: ${guestsSelect.value}`;
+                dateInfo.textContent = `Dato: ${dateInput.value}`;
+                timeInfo.textContent = `Tidspunkt: ${timeSelect.value}`;
+            }
+        });
     }
 
     nextBtn.addEventListener('click', () => {
         goToPage(1); // Move to the second page
-        guestInfo.textContent = `Antal Gæster: ${guestsSelect.value}`;
-        dateInfo.textContent = `Dato: ${dateInput.value}`;
-        timeInfo.textContent = `Tidspunkt: ${timeSelect.value}`;
     });
 
     prevBtn.addEventListener('click', () => {
@@ -52,10 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
             confirmBtn.classList.remove('enabled');
         }
     }
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-    const dateInput = document.getElementById('form-date');
     const today = new Date();
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
