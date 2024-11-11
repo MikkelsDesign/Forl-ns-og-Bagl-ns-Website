@@ -5,6 +5,10 @@
     box-sizing: border-box;  /* Indstiller box-sizing til border-box for at inkludere padding og border i elementets samlede størrelse */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html, body {
     height: 100%;  /* Sørg for, at både html og body fylder hele skærmens højde */
     font-family: Arial, sans-serif;  /* Sætter standard skrifttype til Arial */
@@ -33,8 +37,7 @@ body {
     background-color: #E2DDCE;
 }   
 
-.image-container #forbillede
-{
+.image-container #forbillede {
     position: relative;
     width: 100%;
     height: 100vh;
@@ -177,7 +180,7 @@ body {
     background-color: transparent;  /* Gør headeren helt gennemsigtig */
     position: absolute;  /* Gør headeren ikke følger med */
     width: 100%;  /* Gør headeren lige så bred som skærmen */
-    z-index: 2;  /* Giver headeren et z-index for at sikre, at den ligger over menuen */
+    z-index: 3;  /* Giver headeren et z-index for at sikre, at den ligger over menuen */
     transition: background-color 0.3s ease;  /* Gør baggrundsfarveændring glidende */
 }
 
@@ -355,6 +358,12 @@ body {
 }
 
 .main-article .image-article {
+    max-width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+.main-article .image-article2 {
     display:none;
 }
 
@@ -378,21 +387,21 @@ body {
 }
 
 .section-taste p, .section-reviews p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 10px;
 }
 
 .section-reviews blockquote {
-    font-size: 1rem;
+    font-size: 1.4rem;
     font-style: italic;
     font-family: Lato;
     font-weight: light;
     background-color: #C4885E; /* Light background for quotes */
-    padding: 10px;
+    padding: 14px;
     border-radius: 5px;
     margin-bottom: 10px;
     width:90%;
-    max-width: 450px;
+    max-width: 550px;
     margin: 0 auto 10px auto;
 }
 
@@ -428,14 +437,14 @@ body {
         order: 1; /* Ensure content stays on the left */
     }
 
-    .section-reviews .image-article {
+    .section-reviews .image-article2 {
         display: block; /* Show the image */
         order: 1; /* Move image to the left of the blockquotes */
         margin-right: 20px; /* Add space between the image and blockquotes */
     }
 
-    .section-reviews .image-article img {
-        max-width: 500px; /* Set a maximum width for the image */
+    .section-reviews .image-article2 img {
+        max-width: 00px; /* Set a maximum width for the image */
         max-width: 95%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
@@ -527,6 +536,8 @@ footer a:hover {
     margin-top: 10px;
 }
 
+
+
 .social-media .social-icon {
     display: inline-block;
     margin: 0 10px;
@@ -539,43 +550,54 @@ footer a:hover {
     opacity: 0.7;  /* Hover-effekt for gennemsigtighed */
 }
 
-/* Menukort Overskrift */
+
+
+
+
+
+
+/* Menukort Overskrift - Centreret i midten af skærmen */
 .menu-title {
     text-align: center;
     font-size: 36px;
     font-family: 'Oswald', sans-serif;
     text-decoration: underline;
-    color: #75242C;
-    margin: 30px 0;
-    display: flex;
-    justify-content: center; /* Centrerer horisontalt */
-    align-items: center;     /* Centrerer vertikalt */
-    height: 100vh;           /* Gør, at overskriften er i midten af skærmen (100% højde) */
+    color: #000000;
+    margin: 0;
+    padding-top: 20vh; /* Sørger for, at overskriften ikke er helt oppe ved toppen */
+    width: 100%; /* Gør at titlen fylder hele bredden */
+    position: relative; /* Ændret til relative, så den ikke påvirker andre elementer */
+    top: 0; /* Justerer titlen til toppen af containeren */
+    left: 50%; /* Centrerer horisontalt */
+    transform: translateX(-50%); /* Justerer titlen perfekt centreret */
+    z-index: 2; /* Sørger for at titlen vises foran alt andet */
 }
 
 /* Menu Kolonner */
 .menu-columns {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 40px;
-    flex-wrap: wrap; /* Ensures flexibility in small screens */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* To kolonner */
+    gap: 20px; /* Mellemrum mellem kolonner */
+    justify-items: center; /* Centrerer indholdet i hver kolonne */
 }
 
-/* Column Layout */
-.column {
+.menu-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+}
+
+.column{
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    align-items: center; /* Centers the content within each column */
-    width: 100%; /* Ensure each column takes full width on small screens */
 }
 
 /* Menu Bokse */
 .menu-box {
     width: 150px;
     height: 60px;
-    color: #E2DDCE; /* Text color */
+    color: #E2DDCE;
     font-size: 18px;
     display: flex;
     align-items: center;
@@ -583,32 +605,48 @@ footer a:hover {
     font-family: 'Lato', sans-serif;
     border-radius: 5px;
     text-align: center;
-    background-color: #75242C; /* Background color */
+    background-color: #75242C;
     transition: background-color 0.3s;
+    transition: transform 0.3s;
+    margin: 20px; /* Giver margin omkring hver boks */
 }
 
 .menu-box:hover {
-    background-color: #A4414B; /* Hover effect */
-    color: #fff;
+    background-color: #A4414B; /* Ændrer baggrundsfarve på hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Smooth move on Y axis */
 }
 
-/* Media Query for Larger Screens */
+/* Media Query for større skærme (f.eks. tablets og desktops) */
 @media (min-width: 1024px) {
-    /* Hide the menu boxes on larger screens */
-    .menu-columns {
+    /* Skjuler boksene på større skærme */
+    .menu-box {
         display: none;
     }
 
-    /* Create two columns for the menu items (not the boxes) */
-    .menu-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* Two columns layout */
-        gap: 40px;
+    /* Justerer menuen for større skærme */
+    .menu-columns {
+        grid-template-columns: 1fr 1fr; /* Menuen opdeles i 2 kolonner */
+        gap: 20px; /* Mellemrum mellem de 2 kolonner */
+        margin-top: 150px; /* Øger margin-top for at skubbe menuen længere ned */
+        width: 80%; /* Sørger for at menuen er centreret */
+        margin: 40px auto; /* Centrerer menuen på skærmen og skubber den længere ned */
     }
 
-    /* Ensure that each column gets equal width */
+    /* Menu layout på større skærme */
+    .menu-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* To kolonner layout */
+        gap: 20px; /* Mellemrum mellem kolonner */
+        width: 80%; /* Sørger for at menuen er centreret */
+        margin: 40px auto; /* Centrerer menuen på skærmen og skubber den længere ned */
+    }
+
+    /* Menu sektioner (kolonner) */
     .menu-section {
-        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 }
 
@@ -620,13 +658,9 @@ footer a:hover {
     text-decoration: underline;
     color: #000000;
     margin: 20px 0;
-}
-
-/* Menu Content */
-.menu-content {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 /* Menu Sektion Overskrifter */
@@ -636,24 +670,46 @@ footer a:hover {
     margin-top: 30px;
     margin-bottom: 15px;
     padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-/* Menu Item (tekst og priser) */
 .menu-item {
     display: flex;
     justify-content: space-between;
     padding: 5px 0;
     font-size: 1.1rem;
     font-family: Lato;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
+h3 {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 20px;
+}
 .menu-item p {
     margin: 0;
+    
+    
 }
 
 .price {
     margin-left: auto;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 /* Book bord formular */
 .content {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,18 +10,18 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
-<body style="background-color: #E2DDCE;">
-
-    <header class="header">
-        <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-        <ul class="menu">
-            <li><a href="/menukort.html">Menukort</a></li>
-            <li><a href="/Bookbord.html">Book bord</a></li>
-            <li><a href="#omos">Om os</a></li>
-          </ul>
-        </nav>
-    </header>
+<body>
+    <nav>
+        <header class="header">
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <ul class="menu">
+                <li><a href="/menukort.html">Menukort</a></li>
+                <li><a href="/Bookbord.html">Book bord</a></li>
+                <li><a href="/omos.html">Om os</a></li>
+              </ul>
+        </header>
+    </nav>
 
     <section class="image-containermenu">
         <a href="/index.html">
@@ -30,24 +30,25 @@
     </section>
 
 
+    <div class="menu-title-container">
+        <h1 class="menu-title">Menukort</h1>
+    </div>
+    
+    <br>
+    <div class="menu-row">
+        <div class="columns">
+            <a href="#snacks" class="menu-box">Snacks</a>
+            <a href="#desserter" class="menu-box">Desserter</a>
+            <a href="#olvin" class="menu-box">Øl og Vin</a>
+        </div>
+        <div class="columns">
+            <a href="#retter" class="menu-box">Retter</a>
+            <a href="#drikkevarer" class="menu-box">Drikkevarer</a>
+            <a href="#cocktails" class="menu-box">Cocktails</a>
+        </div>
+    </div>
     <!-- Main Content -->
     <main class="menu-content">
-        <h1 class="menu-title">Menukort</h1>
-
-        <!-- Menu Bokse i To Kolonner -->
-        <div class="menu-columns">
-            <div class="column">
-                <a href="#snacks" class="menu-box">Snacks</a>
-                <a href="#desserter" class="menu-box">Desserter</a>
-                <a href="#olvin" class="menu-box">Øl og Vin</a>
-            </div>
-            <div class="column">
-                <a href="#retter" class="menu-box">Retter</a>
-                <a href="#drikkevarer" class="menu-box">Drikkevarer</a>
-                <a href="#cocktails" class="menu-box">Cocktails</a>
-            </div>
-        </div>
-
         <!-- Snacks Section -->
         <div id="snacks" class="menu-section">
             <h2>Snacks</h2>
@@ -111,7 +112,7 @@
         </div>
 
 
-        <div class="menu-item"><p></p><p class="price"></p></div>
+    
 
 
         <!-- Øl og vin Section -->
@@ -138,41 +139,50 @@
         <div id="cocktails" class="menu-section">
             <h2>Cocktails</h2>
             <div class="menu-item"><p>Cocktails kl. 12-22</p><p class="price">85,-</p></div>
+            <div class="menu-item"><p>Dry Martini cocktail between the sheets</p><p class="price"></p></div>
+            <div class="menu-item"><p>Margarita</p><p class="price"></p></div>
+            <div class="menu-item"><p>Manhattan</p><p class="price"></p></div>
+            <div class="menu-item"><p>White lady Daiquiri</p><p class="price"></p></div>
+            <div class="menu-item"><p>Brandy Alexander</p><p class="price"></p></div>
+            <div class="menu-item"><p>White Cloud</p><p class="price"></p></div>
+            <div class="menu-item"><p>Mojito</p><p class="price"></p></div>
+            <div class="menu-item"><p>Maitai</p><p class="price"></p></div>
+            <div class="menu-item"><p>Chi Chi</p><p class="price"></p></div>
+            <div class="menu-item"><p>Espresso Martini</p><p class="price"></p></div>
+            <div class="menu-item"><p>1 kande Sangria rød/hvid</p><p class="price">295,-</p></div>
+
         </div>
     </main>
 
     <footer>
         <div class="footer-content">
-            <p><strong>Forlæns & Baglæns</strong> – Smag, samvær og kvalitet fra bunden. Besøg os i hjertet af byen og del oplevelsen.</p>
-            <p><strong>Jægergårdsgade 23, 8000 Aarhus C</strong></p>
-            <p><strong>Åbningstider:</strong> Man-Søn 10-22</p>
-            <p><strong>Kontakt os:</strong><br>
-                <a href="mailto:info@forlaensbaglaens.dk">info@forlaensbaglaens.dk</a><br>
-                61 77 75 09
-            </p>
-
-            <p><strong>Følg os på sociale medier:</strong></p>
-
-            <div class="social-media">
-                <!-- Instagram Icon -->
-                <a href="https://www.instagram.com/forlaensbaglaens/" target="_blank" class="social-icon">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <!-- Facebook Icon -->
-                <a href="https://www.facebook.com/forlaensogbaglaens" target="_blank" class="social-icon">
-                    <i class="fab fa-facebook-square"></i>  <!-- Facebook logo som ikon -->
-                </a>
+            <div class="footer-info">
+                <p><strong>Forlæns & Baglæns</strong> – Smag, samvær og kvalitet fra bunden. Besøg os i hjertet af byen og del oplevelsen.</p>
+                <p><strong>Jægergårdsgade 23, 8000 Aarhus C</strong></p>
+                <p><strong>Åbningstider:</strong> Man-Søn 10-22</p>
+                <p><strong>Kontakt os:</strong><br>
+                    <a href="mailto:info@forlaensbaglaens.dk">info@forlaensbaglaens.dk</a><br>
+                    61 77 75 09
+                </p>
             </div>
-
-            <p><strong>Kontrolrapport</strong></p>
-            <div class="kontrolrapport">
-                <!-- Smiley Icon -->
-                <a href="https://www.findsmiley.dk/716394" target="_blank" class="smiley-icon">
-                    <i class="far fa-smile"></i> <!-- Font Awesome Smiley Icon -->
-                </a>
+    
+            <div class="footer-icons">
+                <p><strong>Følg os på sociale medier:</strong></p>
+                <div class="social-media">
+                    <a href="https://www.instagram.com/forlaensbaglaens/" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/forlaensogbaglaens" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                </div>
+                <p><strong>Kontrolrapport</strong></p>
+                <div class="kontrolrapport">
+                    <a href="https://www.findsmiley.dk/716394" target="_blank" class="smiley-icon">
+                        <i class="far fa-smile"></i>
+                    </a>
+                </div>
             </div>
-
-            
         </div>
     </footer>
 
