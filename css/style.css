@@ -344,6 +344,151 @@ body {
     }
 }
 
+/* Black Header */
+.header-black {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+    transition: background-color 0.3s ease;
+    padding: 10px 0;
+}
+
+/* Menu */
+.menu-black {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: transparent;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+    position: absolute;
+    top: 100%; /* Position the menu directly below the header */
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+/* Menu Items */
+.menu-black li {
+    display: block;
+}
+
+/* Menu Links */
+.nav-link-black {
+    color: #000000;
+    padding: 10px 20px;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    font-family: Lato;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Underline Effect */
+.nav-link-black::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 5px; /* Bring the underline closer to the text */
+    transform: translateX(-50%) scaleX(0);
+    width: 5em; /* Make the underline narrower */
+    height: 2px; /* Reduce the thickness of the underline */
+    background-color: black;
+    transition: transform 0.3s;
+    transform-origin: center;
+}
+
+.nav-link-black:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* Burger Icon */
+.menu-icon-black {
+    cursor: pointer;
+    padding: 10px 20px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 3;
+    user-select: none;
+}
+
+.navicon-black {
+    background: #000000;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition: 0.2s ease-out;
+}
+
+.navicon-black::before,
+.navicon-black::after {
+    background: #000000;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+}
+
+.navicon-black::before {
+    top: 5px;
+}
+
+.navicon-black::after {
+    top: -5px;
+}
+
+/* Menu Button (Checkbox) */
+.menu-btn-black {
+    display: none;
+}
+
+/* Menu Fold-Out on Checkbox Check */
+.menu-btn-black:checked ~ .menu-black {
+    max-height: 300px; /* Adjust height to fit all menu items */
+}
+
+/* Burger Icon Animation */
+.menu-btn-black:checked ~ .menu-icon-black .navicon-black {
+    background: transparent;
+}
+
+.menu-btn-black:checked ~ .menu-icon-black .navicon-black::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.menu-btn-black:checked ~ .menu-icon-black .navicon-black::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+/* Responsive Design for Larger Screens */
+@media (min-width: 768px) {
+    .menu-black {
+        max-height: none;
+        position: static;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .menu-icon-black {
+        display: none;
+    }
+
+    .menu-black li {
+        display: inline;
+    }
+}
+
+
 .main-article {
     display: flex;
     flex-direction: column;
