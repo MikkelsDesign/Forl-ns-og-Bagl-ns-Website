@@ -1,3 +1,806 @@
+/* CSS Reset */
+* {
+    margin: 0;  /* Fjerner margin på alle elementer */
+    padding: 0;  /* Fjerner padding på alle elementer */
+    box-sizing: border-box;  /* Indstiller box-sizing til border-box for at inkludere padding og border i elementets samlede størrelse */
+}
+
+html, body {
+    height: 100%;  /* Sørg for, at både html og body fylder hele skærmens højde */
+    font-family: Arial, sans-serif;  /* Sætter standard skrifttype til Arial */
+}
+
+img {
+    max-width: 100%;  /* Sørger for at billeder ikke overskrider deres container */
+    height: auto;  /* Bevarer billedets højde/bredde-forhold */
+}
+
+a {
+    text-decoration: none;  /* Fjerner underlinje fra links */
+    color: #000;  /* Sætter linkfarve til sort */
+}
+
+ul, ol {
+    list-style: none;  /* Fjerner punkttegn fra ul og ol */
+}
+
 body {
+    margin: 0;  /* Fjerner margin på body */
+    background-color: #E2DDCE;  /* Sætter baggrundsfarven til sort */
+}
+
+.image-container {
+    background-color: #E2DDCE;
+}   
+
+.image-container #forbillede
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+/* Hvidt logo øverst venstr hjørne */
+/* Logo placering */
+.image-container #logo {
+    position: absolute;  /* Positionerer logoet absolut i forhold til containeren */
+    top: 10px;  /* Placerer logoet 10px fra toppen */
+    left: 10px;  /* Placerer logoet 10px fra venstre */
+    z-index: 10;  /* Giver logoet et højere z-index for at sikre, at det er over andre elementer */
+    width: 50px;  /* Sætter logoets bredde til 50px */
+    transition: transform 0.3s ease-out
+}
+
+.image-containermenu #logomenu {
+    position: absolute;  /* Positionerer logoet absolut i forhold til containeren */
+    top: 20px;  /* Placerer logoet 10px fra toppen */
+    left: 20px;  /* Placerer logoet 10px fra venstre */
+    z-index: 10;  /* Giver logoet et højere z-index for at sikre, at det er over andre elementer */
+    width: 50px;  /* Sætter logoets bredde til 50px */
+    transition: transform 0.3s ease-out
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+}
+
+.welcome-text {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #f0f0f0;
+    white-space: nowrap;
+    font-family: Oswald;
+    letter-spacing: 2px;
+}
+
+.image-container #mainlogo {
+    max-width: 550px; /* Set a maximum width */
+    min-width: 275px; /* Set a minimum width */
+    width: 40vw; /* Make it responsive using viewport width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the logo horizontally */
+    display: block; /* Ensure the image centers properly */
+}
+
+.subtext {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #EFFFFF;
+    font-family: Lato;
+    letter-spacing: 4px;
+}
+
+
+/* De to røde knapper */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.button {
+    background-color: #75242C;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    font-family: Lato;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    transition: transform 0.3s;
+    width: 12.5em;
+    align-items: center; 
+}
+
+.button:hover {
+    background-color: #A4414B;
+    transform: translateY(-3px) scale(1.03); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.image-container #logo:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
+
+.image-containermenu #logomenu:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
+
+
+/* Forsidebillede og logo media queries */
+/* Responsiv design for skærme over 768px */
+@media (min-width: 768px) {
+    #front-page-image img {
+        width: auto;  /* Lader billedet skalere automatisk på større skærme */
+        height: auto;  /* Bevarer billedets højde/bredde-forhold */
+    }
+
+    .image-container #logo {
+        content: url(/img/LogostorHvid.webp);
+        width: 200px;
+        top: 25px;
+        left: 25px;
+    }
+
+    #logo {
+        content: url(/img/LogostorHvid.webp);  /* Ændrer logoet til et større billede */
+        width: 400px;  /* Øger logoets størrelse på større skærme */
+    }
+
+     .image-containermenu #logomenu {
+        content: url(/img/LogoStor.webp);  /* Ændrer logoet til et større billede */
+        width: 200px;  /* Øger logoets størrelse på større skærme */
+    }
+
+    .buttons {
+        flex-direction: row; /* Arrange buttons side-by-side */
+        justify-content: center; /* Center the buttons horizontally */
+        gap: 20px; /* Add some space between the buttons */
+    }
+
+}
+
+/* Header */
+.header {
+    background-color: transparent;  /* Gør headeren helt gennemsigtig */
+    position: absolute;  /* Gør headeren ikke følger med */
+    width: 100%;  /* Gør headeren lige så bred som skærmen */
+    z-index: 2;  /* Giver headeren et z-index for at sikre, at den ligger over menuen */
+    transition: background-color 0.3s ease;  /* Gør baggrundsfarveændring glidende */
+}
+
+/* Header liste (menupunkter) */
+.header ul {
+    margin: 0;  /* Fjerner margin på listen */
+    padding: 0;  /* Fjerner padding på listen */
+    list-style: none;  /* Fjerner punkttegn på listen */
+    overflow: hidden;  /* Skjuler indhold, der går udenfor containeren */
+    background-color: transparent;  /* Gør listen gennemsigtig */
+}
+
+/* Header liste tekst */
+.header li a {
+    color: #ffffff;
+    padding: 10px 20px;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    color: #ffffff;  /* Gør tekstfarven hvid */
+    padding: 20px;  /* Tilføjer 20px padding rundt om linket */
+    display: block;  /* Gør linkene til blokke så de fylder hele rækken */
+    text-align: center;  /* Centrerer tekst i linket */
+    position: relative;
+    font-family: Lato;
+}
+
+/* Menu (dropdown) */
+.header .menu {
+    position: absolute;  /* Positionerer menuen absolut i forhold til containeren */
+    top: 0;  /* Starter menuen fra toppen af skærmen */
+    left: 0;  /* Starter menuen fra venstre */
+    right: 0;  /* Får menuen til at strække sig over hele skærmen */
+    background-color: #E2DDCE;  /* Sætter baggrundsfarve på menuen */
+    padding: 10px 0;  /* Tilføjer 10px padding på top og bund */
+    max-height: 0;  /* Sætter start-højden på menuen til 0, så den er skjult */
+    overflow: hidden;  /* Skjuler menuindholdet, når højden er 0 */
+    transition: max-height 0.3s ease-out;  /* Glidende overgang for at åbne menuen */
+    z-index: 1;  /* Sørger for at menuen ligger bag logo og burgerikon */
+}
+
+.header a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) scaleX(0);
+    width: 5em;
+    height: 2px; /* Thickness of the underline */
+    background-color: white; /* Change to your preferred underline color */
+    transition: transform 0.3s;
+    transform-origin: center;
+    bottom: 18px;
+}
+
+.header a:hover::after {
+    transform: translateX(-50%) scaleX(1); /* Expand underline from the middle */
+}
+
+/* Burger-ikon */
+.header .menu-icon {
+    cursor: pointer;  /* Gør ikonene klikbare */
+    padding: 28px 20px;  /* Tilføjer padding omkring burgerikonet */
+    position: absolute;  /* Positionerer burgerikonet absolut */
+    top: 10px;  /* Placerer burgerikonet 10px fra toppen */
+    right: 20px;  /* Placerer burgerikonet 20px fra højre */
+    z-index: 3;  /* Sørger for at burgerikonet ligger over menuen */
+    user-select: none;  /* Forhindrer at ikonet bliver markeret */
+}
+
+/* Burger-ikon linjer */
+.header .menu-icon .navicon {
+    background: #ffffff;  /* Sætter baggrundsfarve på linjerne til hvid */
+    display: block;  /* Gør linjerne til blokke */
+    height: 2px;  /* Sætter højden på linjerne */
+    position: relative;  /* Positionerer linjerne relativt til deres container */
+    transition: .2s ease-out;  /* Glidende overgang ved ændring af stil */
+    width: 18px;  /* Sætter bredden på linjerne */
+}
+
+/* Burger-ikonens før og efter pseudo-elementer */
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+    background: #fff;  /* Gør før og efter linjerne hvide */
+    content: '';  /* Fjerner tekstindhold */
+    display: block;  /* Gør dem til blokke */
+    height: 100%;  /* Giver dem samme højde som linjen */
+    position: absolute;  /* Positionerer dem absolut */
+    transition: all .2s ease-out;  /* Glidende overgang */
+    width: 100%;  /* Gør dem lige så brede som linjen */
+}
+
+.header .menu-icon .navicon:before {
+    top: 5px;  /* Placerer den første linje 5px fra toppen */
+}
+
+.header .menu-icon .navicon:after {
+    top: -5px;  /* Placerer den anden linje 5px fra bunden */
+}
+
+/* Menu-knap (checkbox) */
+.header .menu-btn {
+    display: none;  /* Skjuler menu-knappen, da den kun bruges som skjult input */
+}
+
+/* Når menu-knappen er aktiveret */
+.header .menu-btn:checked ~ .menu {
+    max-height: 240px;  /* Åbner menuen ved at sætte max-højden til 240px */
+}
+
+/* Når menu-knappen er aktiveret, skjules burgerikonet */
+.header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;  /* Gør burgerikonet gennemsigtigt */
+    
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);  /* Roterer før linjen -45 grader */
+    top: 0;  /* Justerer placeringen af linjen, så den er på samme sted som den anden linje */
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);  /* Roterer efter linjen 45 grader */
+    top: 0;  /* Justerer placeringen af linjen, så den er på samme sted som den første linje */
+}
+
+/* Responsiv design under 768px */
+@media (max-width: 767px) {
+    .header .menu {
+        display: none;  /* Skjuler menuen helt under 768px */
+    }
+
+    .header .menu-btn:checked ~ .menu {
+        display: block;  /* Viser menuen, når burgerikonet er klikket */
+        max-height: 240px;  /* Sætter højden på menuen */
+    }
+}
+
+/* Responsiv design over 768px */
+@media (min-width: 768px) {
+    .header li {
+        float: right;  /* Placerer menupunkterne til højre */
+    }
+
+    .header li a {
+        padding: 20px 30px;  /* Øger padding på menupunkterne */
+        text-align: right;  /* Justerer tekst til højre */
+    }
+
+    .header .menu {
+        clear: none;  /* Sikrer at menuen ikke flyder */
+        float: right;  /* Placerer menuen til højre */
+        max-height: none;  /* Fjerner max-højde på større skærme */
+        background-color: transparent;  /* Gør menuen gennemsigtig */
+        padding: 0;  /* Fjerner padding */
+        border-radius: 0;  /* Fjerner border-radius */
+    }
+
+    .header .menu-icon {
+        display: none;  /* Skjuler burgerikonet på større skærme */
+    }
+}
+
+.main-article {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Space between sections */
+    background-color: #E2DDCE; /* Light background to match the design */
+    padding: 20px; /* General padding for the main article */
+    color: #333; /* Text color for readability */
+    font-family: Lato; /* Font style for main content */
+    max-width: 1200px; /* Set a maximum width for the content */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0 20px; /* Add some horizontal padding for smaller screens */
+}
+
+.main-article .image-article {
+    display:none;
+}
+
+.main-article h2 {
+    font-family: Oswald;
+}
+
+.section-taste, .section-reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between elements in each section */
+}
+
+.section-taste .content, .section-reviews .content {
+    text-align: center;
+}
+
+.section-taste h2, .section-reviews h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.section-taste p, .section-reviews p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.section-reviews blockquote {
+    font-size: 1rem;
+    font-style: italic;
+    font-family: Lato;
+    font-weight: light;
+    background-color: #C4885E; /* Light background for quotes */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width:90%;
+    max-width: 450px;
+    margin: 0 auto 10px auto;
+}
+
+.section-taste .image-article, .section-reviews .image-article {
+    text-align: center;
+}
+
+.section-taste .image-article img, .section-reviews .image-article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Rounded corners for images */
+}
+
+@media (min-width: 768px) {
+    .section-taste, .section-reviews {
+        flex-direction: row; /* Arrange items in a row */
+        align-items: center; /* Center items vertically */
+    }
+
+    .section-taste .image-article {
+        display: block; /* Show the image */
+        order: 2; /* Move image to the right of the content */
+        margin-left: 20px; /* Add space between the content and image */
+    }
+
+    .section-taste .image-article img {
+        max-height: 600px; /* Set a maximum width for the image */
+        max-width: 95%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .section-taste .content {
+        order: 1; /* Ensure content stays on the left */
+    }
+
+    .section-reviews .image-article {
+        display: block; /* Show the image */
+        order: 1; /* Move image to the left of the blockquotes */
+        margin-right: 20px; /* Add space between the image and blockquotes */
+    }
+
+    .section-reviews .image-article img {
+        max-width: 500px; /* Set a maximum width for the image */
+        max-width: 95%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .section-reviews blockquote {
+        max-width: 20em;
+       max-width: 95%; 
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .section-reviews .content {
+        order: 2; /* Ensure content stays on the right */
+    }
+}
+
+
+/* Footer */
+/* Footer */
+footer {
+    background-color: #BAAC83; /* Background color */
+    padding: 20px; /* Padding around footer content */
+    text-align: left; /* Left-aligned text */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally in the footer */
+    gap: 20px; /* Space between footer elements */
+}
+
+/* Footer text */
+footer p {
+    margin: 10px 0; /* Space between lines */
+    font-family: Oswald;
+    font-size: 1.2rem;
+    text-align: center; /* Center text by default */
+}
+
+/* Footer links */
+footer a {
+    color: #75242C; /* Link color */
+    font-weight: bold; /* Bold links */
+    text-decoration: none; /* Remove underline */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+/* Smiley icon */
+.kontrolrapport .smiley-icon {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 40px; /* Size of the smiley icon */
+    color: #000000; /* Color of the smiley icon */
+    transition: opacity 0.3s ease;
+}
+
+.kontrolrapport .smiley-icon:hover {
+    opacity: 0.7; /* Hover effect for transparency */
+}
+
+/* Social media icons */
+.social-media {
+    display: flex;
+    gap: 10px; /* Space between social media icons */
+    justify-content: center; /* Center icons */
+}
+
+/* Media Query for larger screens */
+@media (min-width: 1024px) {
+    .footer-content {
+        flex-direction: row; /* Arrange items in a row */
+        justify-content: center; /* Center the columns */
+        align-items: flex-start; /* Align items to the top */
+        gap: 50px; /* Space between the columns */
+    }
+
+    .social-media, .kontrolrapport {
+        flex: 1; /* Allow the columns to take equal space */
+        text-align: center; /* Center content within the columns */
+    }
+}
+
+
+/* Sociale medie ikoner */
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media .social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 40px;  /* Størrelsen af ikonerne */
+    color: #75242C;   /* Farven på både Instagram og Facebook logoerne */
+    transition: opacity 0.3s ease;
+}
+
+.social-media .social-icon:hover {
+    opacity: 0.7;  /* Hover-effekt for gennemsigtighed */
+}
+
+/* Menukort Overskrift */
+.menu-title {
+    text-align: center;
+    font-size: 36px;
+    font-family: 'Oswald', sans-serif;
+    text-decoration: underline;
+    color: #75242C;
+    margin: 30px 0;
+    display: flex;
+    justify-content: center; /* Centrerer horisontalt */
+    align-items: center;     /* Centrerer vertikalt */
+    height: 100vh;           /* Gør, at overskriften er i midten af skærmen (100% højde) */
+}
+
+/* Menu Kolonner */
+.menu-columns {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Ensures flexibility in small screens */
+}
+
+/* Column Layout */
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; /* Centers the content within each column */
+    width: 100%; /* Ensure each column takes full width on small screens */
+}
+
+/* Menu Bokse */
+.menu-box {
+    width: 150px;
+    height: 60px;
+    color: #E2DDCE; /* Text color */
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #75242C; /* Background color */
+    transition: background-color 0.3s;
+}
+
+.menu-box:hover {
+    background-color: #A4414B; /* Hover effect */
+    color: #fff;
+}
+
+/* Media Query for Larger Screens */
+@media (min-width: 1024px) {
+    /* Hide the menu boxes on larger screens */
+    .menu-columns {
+        display: none;
+    }
+
+    /* Create two columns for the menu items (not the boxes) */
+    .menu-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns layout */
+        gap: 40px;
+    }
+
+    /* Ensure that each column gets equal width */
+    .menu-section {
+        width: 100%;
+    }
+}
+
+/* Yderligere Menukort Overskrifter */
+.menu-subtitle {
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Oswald', sans-serif;
+    text-decoration: underline;
+    color: #000000;
+    margin: 20px 0;
+}
+
+/* Menu Content */
+.menu-content {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Menu Sektion Overskrifter */
+.menu-section h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+/* Menu Item (tekst og priser) */
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-size: 1.1rem;
+    font-family: Lato;
+}
+
+.menu-item p {
+    margin: 0;
+}
+
+.price {
+    margin-left: auto;
+}
+
+/* Book bord formular */
+.content {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-box {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    transition: all 0.4s ease;
+}
+
+.form-page {
+    display: none;
+}
+
+.form-page p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-family: Lato;
+}
+
+.form-page.active {
+    display: block;
+}
+
+.form-heading {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: Oswald;
+    letter-spacing: 2px;
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: Lato;
+}
+
+.form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-textarea {
+    resize: vertical;
+}
+
+.form-checkbox-container {
+    margin-bottom: 20px;
+}
+
+.form-checkbox-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-family: Lato;
+}
+
+.form-checkbox {
+    margin-right: 10px;
+}
+
+.form-button-group {
+    display: flex;
+    justify-content: space-between;
+    font-family: Lato;
+}
+
+.form-next-btn, .form-prev-btn, .form-confirm-btn {
+    background-color: #E2DDCE;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: Lato;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.form-prev-btn {
     background-color: #E2DDCE;
 }
+
+.form-next-btn {
+    background-color: #E2DDCE;
+    float: right;
+    text-decoration: black;
+}
+
+.form-confirm-btn {
+    background-color: #75242C;
+    cursor: not-allowed;
+    color: white
+}
+
+.form-confirm-btn.enabled {
+    cursor: pointer;
+    background-color: #75242C;
+}
+
+.form-next-btn:hover, .form-prev-btn:hover, .form-confirm-btn.enabled:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.form-next-btn:hover, .form-prev-btn:hover {
+    background-color: #c5c1b3;
+}
+
+.form-confirm-btn.enabled:hover
+{
+    background-color: #A4414B;
+}
+
+.form-page {
+    display: none;
+    opacity: 0;
+    transform: scale(0.9); /* Shrink more to make the transition noticeable */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Slower transition (600ms) */
+}
+
+.form-page.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1); /* Return to normal size */
+}
+
+.form-page.exiting {
+    opacity: 0;
+    transform: scale(1.1); /* Grow more before fading out */
+}
+
+
+

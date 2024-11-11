@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forlæns og Baglæns</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="/img/Favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+
+
+</head>
+
+<body>
+    <nav>
+        <header class="header">
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <ul class="menu">
+                <li><a href="/menukort.html">Menukort</a></li>
+                <li><a href="/Bookbord.html">Book bord</a></li>
+                <li><a href="#omos">Om os</a></li>
+              </ul>
+        </header>
+    </nav>
+
+    <section class="image-containermenu">
+        <a href="/index.html">
+            <img src="/img/LogoLilleSort.webp" alt="Website Logo" id="logomenu"> 
+        </a>
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <main class="content">
+        <div class="form-box">
+            
+            <section class="form-page active" id="form-step-1">
+                <h3 class="form-heading">Book Bord</h3>
+                <label class="form-label" for="form-guests">Antal Gæster:</label>
+                <select class="form-select" id="form-guests" name="form-guests">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+
+                <label class="form-label" for="form-date">Dato:</label>
+                <input class="form-input" type="date" id="form-date" name="form-date" min="2024-01-01">
+
+                <label class="form-label" for="form-time">Tidspunkt:</label>
+                <select class="form-select" id="form-time" name="form-time">
+                    <option value="14:00">14:00</option>
+                    <option value="14:30">14:30</option>
+                    <option value="15:00">15:00</option>
+                    <option value="15:30">15:30</option>
+                    <option value="16:00">16:00</option>
+                    <option value="16:30">16:30</option>
+                    <option value="17:00">17:00</option>
+                    <option value="17:30">17:30</option>
+                    <option value="18:00">18:00</option>
+                    <option value="18:30">18:30</option>
+                    <option value="19:00">19:00</option>
+                    <option value="19:30">19:30</option>
+                    <option value="20:00">20:00</option>
+                    <option value="20:30">20:30</option>
+                    <option value="21:00">21:00</option>
+                    <option value="21:30">21:30</option>
+                </select>
+                <br> 
+                <br>           
+                <button type="button" class="form-next-btn">Næste</button>
+            </section>
+
+            <!-- Step 2: Enter Personal Info -->
+            <section class="form-page" id="form-step-2">
+                <h3 class="form-heading">Dine Detaljer</h3>
+                <p>Forlæns og Baglæns</p>
+                <p>Jægergårdsgade 23, 8000 Aarhus C</p>
+                <br>
+                <p id="guest-info"></p>
+                <p id="date-info">Dato: </p>
+                <p id="time-info">Time: </p>
+                <br>
+                <br>
+                <label class="form-label" for="form-name">Navn:</label>
+                <input class="form-input" type="text" id="form-name" name="form-name" required>
+
+                <label class="form-label" for="form-phone">Telefonnummber:</label>
+                <input class="form-input" type="tel" id="form-phone" name="form-phone" required>
+
+                <label class="form-label" for="form-email">Emailadresse:</label>
+                <input class="form-input" type="email" id="form-email" name="form-email" required>
+
+                <label class="form-label" for="form-comments">Eventuelle kommentare (valgfrit):</label>
+                <textarea class="form-textarea" id="form-comments" name="form-comments"></textarea>
+                <br>
+                <br>
+
+                <div class="form-checkbox-container">
+                    <label class="form-checkbox-label">
+                        <input class="form-checkbox" type="checkbox" id="form-terms" required>Jeg er indforstået med at bookingen kan afbestilles op til 2 timer inden reservationen
+                    </label>
+                    <label class="form-checkbox-label">
+                        <input class="form-checkbox" type="checkbox" id="form-newsletter"> Jeg er indforstået med, at bookingen varer i 2 timer
+                    </label>
+                </div>
+                
+                <br>
+
+                <div class="form-button-group">
+                    <button type="button" class="form-prev-btn">Tilbage</button>
+                    <button type="submit" class="form-confirm-btn" disabled>Bekræft</button>
+                </div>
+            </section>
+        </div>
+    </main>
+  
+
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p><strong>Forlæns & Baglæns</strong> – Smag, samvær og kvalitet fra bunden. Besøg os i hjertet af byen og del oplevelsen.</p>
+                <p><strong>Jægergårdsgade 23, 8000 Aarhus C</strong></p>
+                <p><strong>Åbningstider:</strong> Man-Søn 10-22</p>
+                <p><strong>Kontakt os:</strong><br>
+                    <a href="mailto:info@forlaensbaglaens.dk">info@forlaensbaglaens.dk</a><br>
+                    61 77 75 09
+                </p>
+            </div>
+    
+            <div class="footer-icons">
+                <p><strong>Følg os på sociale medier:</strong></p>
+                <div class="social-media">
+                    <a href="https://www.instagram.com/forlaensbaglaens/" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/forlaensogbaglaens" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                </div>
+                <p><strong>Kontrolrapport</strong></p>
+                <div class="kontrolrapport">
+                    <a href="https://www.findsmiley.dk/716394" target="_blank" class="smiley-icon">
+                        <i class="far fa-smile"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
