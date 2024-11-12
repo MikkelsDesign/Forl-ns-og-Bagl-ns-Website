@@ -1,8 +1,8 @@
 /* CSS Reset */
 * {
-    margin: 0;  /* Fjerner margin på alle elementer */
-    padding: 0;  /* Fjerner padding på alle elementer */
-    box-sizing: border-box;  /* Indstiller box-sizing til border-box for at inkludere padding og border i elementets samlede størrelse */
+    margin: 0;  
+    padding: 0;  
+    box-sizing: border-box; 
 }
 
 html {
@@ -10,27 +10,27 @@ html {
 }
 
 html, body {
-    height: 100%;  /* Sørg for, at både html og body fylder hele skærmens højde */
-    font-family: Arial, sans-serif;  /* Sætter standard skrifttype til Arial */
+    height: 100%;  
+    font-family: Arial, sans-serif;  
 }
 
 img {
-    max-width: 100%;  /* Sørger for at billeder ikke overskrider deres container */
-    height: auto;  /* Bevarer billedets højde/bredde-forhold */
+    max-width: 100%;  
+    height: auto;  
 }
 
 a {
-    text-decoration: none;  /* Fjerner underlinje fra links */
-    color: #000;  /* Sætter linkfarve til sort */
+    text-decoration: none;  
+    color: #000;  
 }
 
 ul, ol {
-    list-style: none;  /* Fjerner punkttegn fra ul og ol */
+    list-style: none;  
 }
 
 body {
-    margin: 0;  /* Fjerner margin på body */
-    background-color: #E2DDCE;  /* Sætter baggrundsfarven til sort */
+    margin: 0;  
+    background-color: #E2DDCE;  
 }
 
 .image-container {
@@ -175,174 +175,169 @@ body {
 
 }
 
-/* Header */
-.header {
+/* White Header */
+.header-white {
     background-color: transparent;
-    position: absolute;  /* Gør headeren ikke følger med */
+    position: absolute;
     width: 100%;
-    z-index: 3;  /* Giver headeren et z-index for at sikre, at den ligger over menuen */
-    transition: background-color 0.3s ease;  /* Gør baggrundsfarveændring glidende */
+    z-index: 3;
+    transition: background-color 0.3s ease;
     padding: 10px 0;
 }
 
-/* Header liste (menupunkter) */
-.header ul {
+/* Menu */
+.menu-white {
     margin: 0;
     padding: 0;
-    list-style: none;  /* Fjerner punkttegn på listen */
-    overflow: hidden;  /* Skjuler indhold, der går udenfor containeren */
+    list-style: none;
+    overflow: hidden;
     background-color: transparent;
+    max-height: 0;
+    position: absolute;
+    top: 0; /* Position the menu directly below the header */
+    left: 0;
+    right: 0;
+    z-index: 2;
+    transition: max-height 0.3s ease, background-color 0.3s ease, padding 0.3s ease;
+
 }
 
-/* Header liste tekst */
-.header li a {
+/* Menu Items */
+.menu-white li {
+    display: block;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Smooth transition for text */
+    pointer-events: none;
+}
+
+/* Menu Links */
+.nav-link-white {
+    color: #ffffff;
     padding: 10px 20px;
     display: block;
     text-align: center;
     font-size: 20px;
-    color: #ffffff;
-    padding: 20px;
-    display: block;  /* Gør linkene til blokke så de fylder hele rækken */
-    text-align: center;
-    position: relative;
     font-family: Lato;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-/* Menu (dropdown) */
-.header .menu {
-    position: absolute;  /* Positionerer menuen absolut i forhold til containeren */
-    top: 0;  /* Starter menuen fra toppen af skærmen */
-    left: 0;
-    right: 0;
-    background-color: #E2DDCE;
-    padding: 10px 0;
-    max-height: 0;  /* Sætter start-højden på menuen til 0 */
-    overflow: hidden;  /* Skjuler menuindholdet, når højden er 0 */
-    transition: max-height 0.3s ease-out;  /* Glidende overgang for at åbne menuen */
-    z-index: 1;  /* Sørger for at menuen ligger bag logo og burgerikon */
-}
-
-.header a::after {
+/* Underline Effect */
+.nav-link-white::after {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: 4px; /* Bring the underline closer to the text */
     transform: translateX(-50%) scaleX(0);
-    width: 3em;
-    height: 2px;
+    width: 50%; /* Make the underline narrower */
+    height: 1px; /* Reduce the thickness of the underline */
     background-color: white;
     transition: transform 0.3s;
     transform-origin: center;
-    bottom: 18px;
 }
 
-.header a:hover::after {
-    transform: translateX(-50%) scaleX(1); /* Expand underline from the middle */
+.nav-link-white:hover::after {
+    transform: translateX(-50%) scaleX(1);
 }
 
-/* Burger-ikon */
-.header .menu-icon {
-    cursor: pointer;  /* Gør ikonene klikbare */
-    padding: 20px 20px;
+/* Burger Icon */
+.menu-icon-white {
+    cursor: pointer;
+    padding: 10px 20px;
     position: absolute;
     top: 20px;
     right: 20px;
-    z-index: 3;  /* Sørger for at burgerikonet ligger over menuen */
-    user-select: none;  /* Forhindrer at ikonet bliver markeret */
+    z-index: 3;
+    user-select: none;
 }
 
-/* Burger-ikon linjer */
-.header .menu-icon .navicon {
+.navicon-white {
     background: #ffffff;
-    display: block;  /* Gør linjerne til blokke */
-    height: 2px;  /* Sætter højden på linjerne */
-    position: relative;
-    transition: .2s ease-out;  /* Glidende overgang ved ændring af stil */
+    display: block;
+    height: 2px;
     width: 18px;
+    position: relative;
+    transition: 0.2s ease-out;
 }
 
-/* Burger-ikonens før og efter pseudo-elementer */
-.header .menu-icon .navicon:before,
-.header .menu-icon .navicon:after {
-    background: #fff;
-    content: '';  /* Fjerner tekstindhold */
-    display: block;  /* Gør dem til blokke */
+.navicon-white::before,
+.navicon-white::after {
+    background: #ffffff;
+    content: '';
+    display: block;
     height: 100%;
-    position: absolute;
-    transition: all .2s ease-out;  /* Glidende overgang */
     width: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
 }
 
-.header .menu-icon .navicon:before {
-    top: 5px;  /* Placerer den første linje 5px fra toppen */
+.navicon-white::before {
+    top: 5px;
 }
 
-.header .menu-icon .navicon:after {
-    top: -5px;  /* Placerer den anden linje 5px fra bunden */
+.navicon-white::after {
+    top: -5px;
 }
 
-/* Menu-knap (checkbox) */
-.header .menu-btn {
-    display: none;  
+/* Menu Button (Checkbox) */
+.menu-btn-white {
+    display: none;
 }
 
-/* Når menu-knappen er aktiveret */
-.header .menu-btn:checked ~ .menu {
-    max-height: 240px;  
+/* Menu Fold-Out on Checkbox Check */
+.menu-btn-white:checked ~ .menu-white {
+    background-color: #E2DDCE; /* Set the backdrop color */
+    max-height: 100vh; /* Allow the menu to fully expand */
+    overflow: hidden; /* Prevent scrolling beyond the menu */
+    padding: 20px 0; /* Add some padding for spacing */
+    transition: max-height 0.3s ease, background-color 0.3s ease, padding 0.3s ease;
 }
 
-/* Når menu-knappen er aktiveret, skjules burgerikonet */
-.header .menu-btn:checked ~ .menu-icon .navicon {
-    background: transparent;  
-    
+.menu-btn-white:checked ~ .menu-white li {
+    opacity: 1; /* Make text fully visible when menu is open */
+    pointer-events: auto; /* Enable interaction when visible */
 }
 
-.header .menu-btn:checked ~ .menu-icon .navicon:before {
-    transform: rotate(-45deg);  
-    top: 0;  
+/* Burger Icon Animation */
+.menu-btn-white:checked ~ .menu-icon-white .navicon-white {
+    background: transparent;
 }
 
-.header .menu-btn:checked ~ .menu-icon .navicon:after {
-    transform: rotate(45deg);  
-    top: 0;  
+.menu-btn-white:checked ~ .menu-white .nav-link-white::after {
+    width: 10%; /* Make the underline narrower when the menu is open */
 }
 
-/* Responsiv design under 768px */
-@media (max-width: 767px) {
-    .header .menu {
-        display: none;  
-    }
-
-    .header .menu-btn:checked ~ .menu {
-        display: block;  
-        max-height: 240px;  
-    }
+.menu-btn-white:checked ~ .menu-icon-white .navicon-white::before {
+    transform: rotate(-45deg);
+    top: 0;
 }
 
-/* Media queries til at fjerne burger ikon på pc */
+.menu-btn-white:checked ~ .menu-icon-white .navicon-white::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+/* Responsive Design for Larger Screens */
 @media (min-width: 768px) {
-    .header li {
-        float: right;  
+    .menu-white {
+        max-height: none;
+        position: static;
+        display: flex;
+        justify-content: flex-end;
     }
 
-    .header li a {
-        padding: 20px 30px;  
-        text-align: right;  
+    .menu-icon-white {
+        display: none;
     }
 
-    .header .menu {
-        clear: none;  
-        float: right;  
-        max-height: none;  
-        background-color: transparent;  
-        padding: 0;  
-        border-radius: 0;  
-    }
-
-    .header .menu-icon {
-        display: none;  
+    .menu-white li {
+        display: inline;
+        opacity: 1; /* Make text always visible */
+        pointer-events: auto; /* Enable interaction */
     }
 }
+
 
 /* Sort header */
 .header-black {
