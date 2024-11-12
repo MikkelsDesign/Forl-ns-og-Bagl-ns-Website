@@ -1000,8 +1000,39 @@ h3 {
 
 .form-page.exiting {
     opacity: 0;
-    transform: scale(1.1); /* Grow more before fading out */
+    transform: scale (1.1); /* Grow more before fading out */
 }
 
+.omos-title {
+    text-align: center;
+    font-size: 36px;
+    font-family: 'Oswald', sans-serif;
+    color: black;
+    margin: 20px 0; /* Mindre margin for at få titlen tættere på toppen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.omos-content {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
 
+.section-om-os {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Afstand mellem elementer i sektionen */
+    margin-top: 20px; /* Eventuelt sæt til 0, hvis den stadig ikke er øverst */
+    padding: 0 20px; /* Reducer margin og padding for at få sektionen helt op */
+}
+
+.section-om-os .content {
+    text-align: center;
+}
+
+.section-om-os p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
