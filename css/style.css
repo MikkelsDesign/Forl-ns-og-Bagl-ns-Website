@@ -46,22 +46,21 @@ body {
 }
 
 /* Hvidt logo øverst venstr hjørne */
-/* Logo placering */
 .image-container #logo {
-    position: absolute;  /* Positionerer logoet absolut i forhold til containeren */
-    top: 10px;  /* Placerer logoet 10px fra toppen */
-    left: 10px;  /* Placerer logoet 10px fra venstre */
-    z-index: 10;  /* Giver logoet et højere z-index for at sikre, at det er over andre elementer */
-    width: 50px;  /* Sætter logoets bredde til 50px */
+    position: absolute;  
+    top: 10px;  
+    left: 10px; 
+    z-index: 10;  
+    width: 50px;  
     transition: transform 0.3s ease-out
 }
 
 .image-containermenu #logomenu {
-    position: absolute;  /* Positionerer logoet absolut i forhold til containeren */
-    top: 20px;  /* Placerer logoet 10px fra toppen */
-    left: 20px;  /* Placerer logoet 10px fra venstre */
-    z-index: 10;  /* Giver logoet et højere z-index for at sikre, at det er over andre elementer */
-    width: 50px;  /* Sætter logoets bredde til 50px */
+    position: absolute;  
+    top: 20px;  
+    left: 20px; 
+    z-index: 10;  
+    width: 50px;  
     transition: transform 0.3s ease-out
 }
 
@@ -85,12 +84,12 @@ body {
 }
 
 .image-container #mainlogo {
-    max-width: 550px; /* Set a maximum width */
-    min-width: 275px; /* Set a minimum width */
-    width: 40vw; /* Make it responsive using viewport width */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center the logo horizontally */
-    display: block; /* Ensure the image centers properly */
+    max-width: 550px; 
+    min-width: 275px; 
+    width: 40vw; 
+    height: auto; 
+    margin: 0 auto; 
+    display: block; 
 }
 
 .subtext {
@@ -146,8 +145,8 @@ body {
 /* Responsiv design for skærme over 768px */
 @media (min-width: 768px) {
     #front-page-image img {
-        width: auto;  /* Lader billedet skalere automatisk på større skærme */
-        height: auto;  /* Bevarer billedets højde/bredde-forhold */
+        width: auto; 
+        height: auto;  
     }
 
     .image-container #logo {
@@ -158,19 +157,19 @@ body {
     }
 
     #logo {
-        content: url(/img/LogostorHvid.webp);  /* Ændrer logoet til et større billede */
-        width: 400px;  /* Øger logoets størrelse på større skærme */
+        content: url(/img/LogostorHvid.webp);  
+        width: 400px;  
     }
 
      .image-containermenu #logomenu {
         content: url(/img/LogoStor.webp);  /* Ændrer logoet til et større billede */
-        width: 200px;  /* Øger logoets størrelse på større skærme */
+        width: 200px;  
     }
 
     .buttons {
-        flex-direction: row; /* Arrange buttons side-by-side */
-        justify-content: center; /* Center the buttons horizontally */
-        gap: 20px; /* Add some space between the buttons */
+        flex-direction: row; 
+        justify-content: center; 
+        gap: 20px; 
     }
 
 }
@@ -206,7 +205,7 @@ body {
 .menu-white li {
     display: block;
     opacity: 0;
-    transition: opacity 0.3s ease; /* Smooth transition for text */
+    transition: opacity 0.3s ease; 
     pointer-events: none;
 }
 
@@ -228,10 +227,10 @@ body {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: 4px; /* Bring the underline closer to the text */
+    bottom: 4px; 
     transform: translateX(-50%) scaleX(0);
-    width: 50%; /* Make the underline narrower */
-    height: 1px; /* Reduce the thickness of the underline */
+    width: 50%; 
+    height: 1px; 
     background-color: white;
     transition: transform 0.3s;
     transform-origin: center;
@@ -287,15 +286,15 @@ body {
 
 /* Menu Fold-Out on Checkbox Check */
 .menu-btn-white:checked ~ .menu-white {
-    background-color: #E2DDCE; /* Set the backdrop color */
-    max-height: 100vh; /* Allow the menu to fully expand */
-    overflow: hidden; /* Prevent scrolling beyond the menu */
-    padding: 20px 0; /* Add some padding for spacing */
+    background-color: #E2DDCE; 
+    max-height: 100vh; 
+    overflow: hidden; 
+    padding: 20px 0; 
     transition: max-height 0.3s ease, background-color 0.3s ease, padding 0.3s ease;
 }
 
 .menu-btn-white:checked ~ .menu-white li {
-    opacity: 1; /* Make text fully visible when menu is open */
+    opacity: 1; 
     pointer-events: auto; /* Enable interaction when visible */
 }
 
@@ -700,7 +699,7 @@ footer a {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 2; /* Sørger for at titlen vises foran alt andet */
+    z-index: 2; 
 }
 
 /* Menu Kolonner */
@@ -960,19 +959,19 @@ footer a {
 .form-page {
     display: none;
     opacity: 0;
-    transform: scale(0.9); /* Shrink more to make the transition noticeable */
-    transition: opacity 0.6s ease, transform 0.6s ease; /* Slower transition (600ms) */
+    transform: scale(0.9); 
+    transition: opacity 0.6s ease, transform 0.6s ease; 
 }
 
 .form-page.active {
     display: block;
     opacity: 1;
-    transform: scale(1); /* Return to normal size */
+    transform: scale(1); 
 }
 
 .form-page.exiting {
     opacity: 0;
-    transform: scale (1.1); /* Grow more before fading out */
+    transform: scale (1.1); 
 }
 
 .omos-content h2 {
@@ -1036,10 +1035,6 @@ footer a {
     color: #333;
     margin-bottom: 20px;
     letter-spacing: 1px;
-}
-
-.instagram-section-2, .instagram-section-3 {
-    display: none;
 }
 
 @media (min-width: 768px) {
