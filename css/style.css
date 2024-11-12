@@ -177,33 +177,33 @@ body {
 
 /* Header */
 .header {
-    background-color: transparent;  /* Gør headeren helt gennemsigtig */
+    background-color: transparent;
     position: absolute;  /* Gør headeren ikke følger med */
-    width: 100%;  /* Gør headeren lige så bred som skærmen */
+    width: 100%;
     z-index: 3;  /* Giver headeren et z-index for at sikre, at den ligger over menuen */
     transition: background-color 0.3s ease;  /* Gør baggrundsfarveændring glidende */
+    padding: 10px 0;
 }
 
 /* Header liste (menupunkter) */
 .header ul {
-    margin: 0;  /* Fjerner margin på listen */
-    padding: 0;  /* Fjerner padding på listen */
+    margin: 0;
+    padding: 0;
     list-style: none;  /* Fjerner punkttegn på listen */
     overflow: hidden;  /* Skjuler indhold, der går udenfor containeren */
-    background-color: transparent;  /* Gør listen gennemsigtig */
+    background-color: transparent;
 }
 
 /* Header liste tekst */
 .header li a {
-    color: #ffffff;
     padding: 10px 20px;
     display: block;
     text-align: center;
     font-size: 20px;
-    color: #ffffff;  /* Gør tekstfarven hvid */
-    padding: 20px;  /* Tilføjer 20px padding rundt om linket */
+    color: #ffffff;
+    padding: 20px;
     display: block;  /* Gør linkene til blokke så de fylder hele rækken */
-    text-align: center;  /* Centrerer tekst i linket */
+    text-align: center;
     position: relative;
     font-family: Lato;
 }
@@ -212,11 +212,11 @@ body {
 .header .menu {
     position: absolute;  /* Positionerer menuen absolut i forhold til containeren */
     top: 0;  /* Starter menuen fra toppen af skærmen */
-    left: 0;  /* Starter menuen fra venstre */
-    right: 0;  /* Får menuen til at strække sig over hele skærmen */
-    background-color: #E2DDCE;  /* Sætter baggrundsfarve på menuen */
-    padding: 10px 0;  /* Tilføjer 10px padding på top og bund */
-    max-height: 0;  /* Sætter start-højden på menuen til 0, så den er skjult */
+    left: 0;
+    right: 0;
+    background-color: #E2DDCE;
+    padding: 10px 0;
+    max-height: 0;  /* Sætter start-højden på menuen til 0 */
     overflow: hidden;  /* Skjuler menuindholdet, når højden er 0 */
     transition: max-height 0.3s ease-out;  /* Glidende overgang for at åbne menuen */
     z-index: 1;  /* Sørger for at menuen ligger bag logo og burgerikon */
@@ -228,9 +228,9 @@ body {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%) scaleX(0);
-    width: 5em;
-    height: 2px; /* Thickness of the underline */
-    background-color: white; /* Change to your preferred underline color */
+    width: 3em;
+    height: 2px;
+    background-color: white;
     transition: transform 0.3s;
     transform-origin: center;
     bottom: 18px;
@@ -243,34 +243,34 @@ body {
 /* Burger-ikon */
 .header .menu-icon {
     cursor: pointer;  /* Gør ikonene klikbare */
-    padding: 28px 20px;  /* Tilføjer padding omkring burgerikonet */
-    position: absolute;  /* Positionerer burgerikonet absolut */
-    top: 10px;  /* Placerer burgerikonet 10px fra toppen */
-    right: 20px;  /* Placerer burgerikonet 20px fra højre */
+    padding: 20px 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
     z-index: 3;  /* Sørger for at burgerikonet ligger over menuen */
     user-select: none;  /* Forhindrer at ikonet bliver markeret */
 }
 
 /* Burger-ikon linjer */
 .header .menu-icon .navicon {
-    background: #ffffff;  /* Sætter baggrundsfarve på linjerne til hvid */
+    background: #ffffff;
     display: block;  /* Gør linjerne til blokke */
     height: 2px;  /* Sætter højden på linjerne */
-    position: relative;  /* Positionerer linjerne relativt til deres container */
+    position: relative;
     transition: .2s ease-out;  /* Glidende overgang ved ændring af stil */
-    width: 18px;  /* Sætter bredden på linjerne */
+    width: 18px;
 }
 
 /* Burger-ikonens før og efter pseudo-elementer */
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
-    background: #fff;  /* Gør før og efter linjerne hvide */
+    background: #fff;
     content: '';  /* Fjerner tekstindhold */
     display: block;  /* Gør dem til blokke */
-    height: 100%;  /* Giver dem samme højde som linjen */
-    position: absolute;  /* Positionerer dem absolut */
+    height: 100%;
+    position: absolute;
     transition: all .2s ease-out;  /* Glidende overgang */
-    width: 100%;  /* Gør dem lige så brede som linjen */
+    width: 100%;
 }
 
 .header .menu-icon .navicon:before {
@@ -283,68 +283,68 @@ body {
 
 /* Menu-knap (checkbox) */
 .header .menu-btn {
-    display: none;  /* Skjuler menu-knappen, da den kun bruges som skjult input */
+    display: none;  
 }
 
 /* Når menu-knappen er aktiveret */
 .header .menu-btn:checked ~ .menu {
-    max-height: 240px;  /* Åbner menuen ved at sætte max-højden til 240px */
+    max-height: 240px;  
 }
 
 /* Når menu-knappen er aktiveret, skjules burgerikonet */
 .header .menu-btn:checked ~ .menu-icon .navicon {
-    background: transparent;  /* Gør burgerikonet gennemsigtigt */
+    background: transparent;  
     
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon:before {
-    transform: rotate(-45deg);  /* Roterer før linjen -45 grader */
-    top: 0;  /* Justerer placeringen af linjen, så den er på samme sted som den anden linje */
+    transform: rotate(-45deg);  
+    top: 0;  
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon:after {
-    transform: rotate(45deg);  /* Roterer efter linjen 45 grader */
-    top: 0;  /* Justerer placeringen af linjen, så den er på samme sted som den første linje */
+    transform: rotate(45deg);  
+    top: 0;  
 }
 
 /* Responsiv design under 768px */
 @media (max-width: 767px) {
     .header .menu {
-        display: none;  /* Skjuler menuen helt under 768px */
+        display: none;  
     }
 
     .header .menu-btn:checked ~ .menu {
-        display: block;  /* Viser menuen, når burgerikonet er klikket */
-        max-height: 240px;  /* Sætter højden på menuen */
+        display: block;  
+        max-height: 240px;  
     }
 }
 
-/* Responsiv design over 768px */
+/* Media queries til at fjerne burger ikon på pc */
 @media (min-width: 768px) {
     .header li {
-        float: right;  /* Placerer menupunkterne til højre */
+        float: right;  
     }
 
     .header li a {
-        padding: 20px 30px;  /* Øger padding på menupunkterne */
-        text-align: right;  /* Justerer tekst til højre */
+        padding: 20px 30px;  
+        text-align: right;  
     }
 
     .header .menu {
-        clear: none;  /* Sikrer at menuen ikke flyder */
-        float: right;  /* Placerer menuen til højre */
-        max-height: none;  /* Fjerner max-højde på større skærme */
-        background-color: transparent;  /* Gør menuen gennemsigtig */
-        padding: 0;  /* Fjerner padding */
-        border-radius: 0;  /* Fjerner border-radius */
+        clear: none;  
+        float: right;  
+        max-height: none;  
+        background-color: transparent;  
+        padding: 0;  
+        border-radius: 0;  
     }
 
     .header .menu-icon {
-        display: none;  /* Skjuler burgerikonet på større skærme */
+        display: none;  
     }
 }
 
-/* Black Header */
+/* Sort header */
 .header-black {
     background-color: transparent;
     position: absolute;
@@ -354,7 +354,7 @@ body {
     padding: 10px 0;
 }
 
-/* Menu */
+
 .menu-black {
     margin: 0;
     padding: 0;
@@ -364,18 +364,18 @@ body {
     max-height: 0;
     transition: max-height 0.3s ease-out;
     position: absolute;
-    top: 100%; /* Position the menu directly below the header */
+    top: 100%; 
     left: 0;
     right: 0;
     z-index: 2;
 }
 
-/* Menu Items */
+
 .menu-black li {
     display: block;
 }
 
-/* Menu Links */
+/* Nav links til undersider med sort tekst */
 .nav-link-black {
     color: #000000;
     padding: 10px 20px;
@@ -388,15 +388,15 @@ body {
     transition: color 0.3s;
 }
 
-/* Underline Effect */
+
 .nav-link-black::after {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: 5px; /* Bring the underline closer to the text */
+    bottom: 5px; 
     transform: translateX(-50%) scaleX(0);
-    width: 5em; /* Make the underline narrower */
-    height: 2px; /* Reduce the thickness of the underline */
+    width: 3em; 
+    height: 2px; 
     background-color: black;
     transition: transform 0.3s;
     transform-origin: center;
@@ -406,12 +406,12 @@ body {
     transform: translateX(-50%) scaleX(1);
 }
 
-/* Burger Icon */
+/* Burger ikonet */
 .menu-icon-black {
     cursor: pointer;
-    padding: 10px 20px;
+    padding: 20px 20px;
     position: absolute;
-    top: 10px;
+    top: 20px;
     right: 20px;
     z-index: 3;
     user-select: none;
@@ -445,17 +445,17 @@ body {
     top: -5px;
 }
 
-/* Menu Button (Checkbox) */
+
 .menu-btn-black {
     display: none;
 }
 
-/* Menu Fold-Out on Checkbox Check */
+
 .menu-btn-black:checked ~ .menu-black {
-    max-height: 300px; /* Adjust height to fit all menu items */
+    max-height: 300px; 
 }
 
-/* Burger Icon Animation */
+/* Burger Ikon animation */
 .menu-btn-black:checked ~ .menu-icon-black .navicon-black {
     background: transparent;
 }
@@ -470,7 +470,7 @@ body {
     top: 0;
 }
 
-/* Responsive Design for Larger Screens */
+
 @media (min-width: 768px) {
     .menu-black {
         max-height: none;
@@ -488,18 +488,19 @@ body {
     }
 }
 
+/* Artikel på forsiden */
 
 .main-article {
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Space between sections */
-    background-color: #E2DDCE; /* Light background to match the design */
-    padding: 20px; /* General padding for the main article */
-    color: #333; /* Text color for readability */
-    font-family: Lato; /* Font style for main content */
-    max-width: 1200px; /* Set a maximum width for the content */
-    margin: 0 auto; /* Center the container horizontally */
-    padding: 0 20px; /* Add some horizontal padding for smaller screens */
+    gap: 40px; 
+    background-color: #E2DDCE; 
+    padding: 20px; 
+    color: #333; 
+    font-family: Lato; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
 }
 
 .main-article .image-article {
@@ -519,7 +520,7 @@ body {
 .section-taste, .section-reviews {
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Space between elements in each section */
+    gap: 40px; 
 }
 
 .section-taste .content, .section-reviews .content {
@@ -541,7 +542,7 @@ body {
     font-style: italic;
     font-family: Lato;
     font-weight: light;
-    background-color: #C4885E; /* Light background for quotes */
+    background-color: #C4885E; 
     padding: 14px;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -557,39 +558,39 @@ body {
 .section-taste .image-article img, .section-reviews .image-article img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px; /* Rounded corners for images */
+    border-radius: 10px; 
 }
 
 @media (min-width: 768px) {
     .section-taste, .section-reviews {
-        flex-direction: row; /* Arrange items in a row */
-        align-items: center; /* Center items vertically */
+        flex-direction: row; 
+        align-items: center; 
     }
 
     .section-taste .image-article {
-        display: block; /* Show the image */
-        order: 2; /* Move image to the right of the content */
-        margin-left: 20px; /* Add space between the content and image */
+        display: block; 
+        order: 2; 
+        margin-left: 20px; 
     }
 
     .section-taste .image-article img {
-        max-height: 600px; /* Set a maximum width for the image */
+        max-height: 600px; 
         max-width: 95%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
     .section-taste .content {
-        order: 1; /* Ensure content stays on the left */
+        order: 1; 
     }
 
     .section-reviews .image-article2 {
-        display: block; /* Show the image */
-        order: 1; /* Move image to the left of the blockquotes */
-        margin-right: 20px; /* Add space between the image and blockquotes */
+        display: block; 
+        order: 1; 
+        margin-right: 20px; 
     }
 
     .section-reviews .image-article2 img {
-        max-width: 00px; /* Set a maximum width for the image */
+        max-width: 00px; 
         max-width: 95%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
@@ -601,77 +602,72 @@ body {
     }
 
     .section-reviews .content {
-        order: 2; /* Ensure content stays on the right */
+        order: 2; 
     }
 }
 
 
 /* Footer */
-/* Footer */
 footer {
-    background-color: #BAAC83; /* Background color */
-    padding: 20px; /* Padding around footer content */
-    text-align: left; /* Left-aligned text */
+    background-color: #BAAC83;
+    padding: 20px;
+    text-align: center;
 }
 
 .footer-content {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally in the footer */
-    gap: 20px; /* Space between footer elements */
+    align-items: left;
+    gap: 20px;
 }
 
 /* Footer text */
 footer p {
-    margin: 10px 0; /* Space between lines */
+    margin: 10px 0;
     font-family: Oswald;
     font-size: 1.2rem;
-    text-align: center; /* Center text by default */
+    text-align: left;
 }
 
 /* Footer links */
 footer a {
-    color: #75242C; /* Link color */
-    font-weight: bold; /* Bold links */
-    text-decoration: none; /* Remove underline */
-}
-
-footer a:hover {
-    text-decoration: underline; /* Underline links on hover */
+    color: #75242C;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 /* Smiley icon */
 .kontrolrapport .smiley-icon {
-    display: inline-block;
+    display: flex;
     margin: 0 10px;
-    font-size: 40px; /* Size of the smiley icon */
-    color: #000000; /* Color of the smiley icon */
+    font-size: 40px;
+    color: #000000;
     transition: opacity 0.3s ease;
 }
 
 .kontrolrapport .smiley-icon:hover {
-    opacity: 0.7; /* Hover effect for transparency */
+    opacity: 0.7;
 }
 
 /* Social media icons */
 .social-media {
     display: flex;
-    gap: 10px; /* Space between social media icons */
-    justify-content: center; /* Center icons */
+    gap: 10px;
+    justify-content: left;
 }
 
 /* Media Query for larger screens */
 @media (min-width: 1024px) {
     .footer-content {
-        flex-direction: row; /* Arrange items in a row */
-        justify-content: center; /* Center the columns */
-        align-items: flex-start; /* Align items to the top */
-        gap: 50px; /* Space between the columns */
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 50px;
     }
 
     .social-media, .kontrolrapport {
         flex: 1; /* Allow the columns to take equal space */
-        text-align: center; /* Center content within the columns */
+        text-align: center;
     }
 }
 
@@ -686,20 +682,14 @@ footer a:hover {
 .social-media .social-icon {
     display: inline-block;
     margin: 0 10px;
-    font-size: 40px;  /* Størrelsen af ikonerne */
-    color: #75242C;   /* Farven på både Instagram og Facebook logoerne */
+    font-size: 40px;
+    color: #75242C;
     transition: opacity 0.3s ease;
 }
 
 .social-media .social-icon:hover {
-    opacity: 0.7;  /* Hover-effekt for gennemsigtighed */
+    opacity: 0.7;
 }
-
-
-
-
-
-
 
 /* Menukort Overskrift - Centreret i midten af skærmen */
 .menu-title {
@@ -709,12 +699,12 @@ footer a:hover {
     text-decoration: underline;
     color: #000000;
     margin: 0;
-    padding-top: 20vh; /* Sørger for, at overskriften ikke er helt oppe ved toppen */
-    width: 100%; /* Gør at titlen fylder hele bredden */
-    position: relative; /* Ændret til relative, så den ikke påvirker andre elementer */
-    top: 0; /* Justerer titlen til toppen af containeren */
-    left: 50%; /* Centrerer horisontalt */
-    transform: translateX(-50%); /* Justerer titlen perfekt centreret */
+    padding-top: 20vh;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 2; /* Sørger for at titlen vises foran alt andet */
 }
 
@@ -722,8 +712,8 @@ footer a:hover {
 .menu-columns {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* To kolonner */
-    gap: 20px; /* Mellemrum mellem kolonner */
-    justify-items: center; /* Centrerer indholdet i hver kolonne */
+    gap: 20px;
+    justify-items: center;
 }
 
 .menu-row{
@@ -753,11 +743,11 @@ footer a:hover {
     background-color: #75242C;
     transition: background-color 0.3s;
     transition: transform 0.3s;
-    margin: 20px; /* Giver margin omkring hver boks */
+    margin: 20px;
 }
 
 .menu-box:hover {
-    background-color: #A4414B; /* Ændrer baggrundsfarve på hover */
+    background-color: #A4414B;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px); /* Smooth move on Y axis */
 }
@@ -772,19 +762,19 @@ footer a:hover {
     /* Justerer menuen for større skærme */
     .menu-columns {
         grid-template-columns: 1fr 1fr; /* Menuen opdeles i 2 kolonner */
-        gap: 20px; /* Mellemrum mellem de 2 kolonner */
-        margin-top: 150px; /* Øger margin-top for at skubbe menuen længere ned */
-        width: 80%; /* Sørger for at menuen er centreret */
-        margin: 40px auto; /* Centrerer menuen på skærmen og skubber den længere ned */
+        gap: 20px;
+        margin-top: 150px;
+        width: 80%;
+        margin: 40px auto;
     }
 
     /* Menu layout på større skærme */
     .menu-content {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* To kolonner layout */
-        gap: 20px; /* Mellemrum mellem kolonner */
-        width: 80%; /* Sørger for at menuen er centreret */
-        margin: 40px auto; /* Centrerer menuen på skærmen og skubber den længere ned */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 80%;
+        margin: 40px auto;
     }
 
     /* Menu sektioner (kolonner) */
@@ -843,17 +833,6 @@ footer a:hover {
 .price {
     margin-left: auto;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* Book bord formular */
 .content {
@@ -1001,7 +980,7 @@ footer a:hover {
     transform: scale (1.1); /* Grow more before fading out */
 }
 
-.omos-title {
+.omos-content h2 {
     text-align: center;
     font-size: 36px;
     font-family: 'Oswald', sans-serif;
@@ -1017,13 +996,16 @@ footer a:hover {
     margin: 0 auto;
     padding: 20px;
 }
+.omos-content p {
+    font-family: Lato;
+}
 
 .section-om-os {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Afstand mellem elementer i sektionen */
-    margin-top: 70px; /* Eventuelt sæt til 0, hvis den stadig ikke er øverst */
-    padding: 0 20px; /* Reducer margin og padding for at få sektionen helt op */
+    gap: 20px;
+    margin-top: 0px; 
+    padding: 0 20px; 
 }
 
 .section-om-os .content {
@@ -1033,4 +1015,72 @@ footer a:hover {
 .section-om-os p {
     font-size: 1.2rem;
     margin-bottom: 10px;
+}
+.omos-image {
+  max-width: 85%;  
+  margin: 0 auto;
+}
+
+.omos-image img {
+    border-radius: 2px; 
+}
+
+.instagram-section {
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+}
+
+.instagram-heading {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.instagram-section-2, .instagram-section-3 {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .section-om-os {
+        flex-direction: row; 
+        justify-content: space-between; 
+        align-items: center; 
+    }
+
+    .omos-content {
+        width: 50%; 
+        text-align: left; 
+    }
+
+    .omos-image {
+        width: 45%; 
+        max-width: 100%; 
+    }
+}
+
+.red {
+color: #A4414B;
+font-weight: bold;
+}
+
+.line {
+    position: absolute;
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 1.5px; 
+    background-color: #000; 
+    height: 165em; 
+}
+
+@media (max-width: 1024px) {
+    .line {
+        display: none;
+    }
 }
